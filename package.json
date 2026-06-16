@@ -1,0 +1,35 @@
+{
+  "name": "fumoto-ryokan-2606",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "build:demo": "cross-env NEXT_PUBLIC_IS_REAL_PROD=false NEXT_PUBLIC_METADATA_BASE=https://demo.fumotoryokan.com/ next build",
+    "build:prod": "cross-env NEXT_PUBLIC_IS_REAL_PROD=true NEXT_PUBLIC_METADATA_BASE=https://www.fumotoryokan.com/ next build",
+    "start": "next start",
+    "lint": "eslint .",
+    "lint:style": "stylelint \"src/**/*.scss\"",
+    "lint:style:fix": "stylelint \"src/**/*.scss\" --fix"
+  },
+  "dependencies": {
+    "next": "16.2.9",
+    "react": "19.2.4",
+    "react-dom": "19.2.4"
+  },
+  "devDependencies": {
+    "@types/node": "^20",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "cross-env": "^10.1.0",
+    "eslint": "^9",
+    "eslint-config-next": "16.2.9",
+    "prettier": "^3.8.4",
+    "rimraf": "^6.1.3",
+    "sass": "^1.101.0",
+    "stylelint": "^17.13.0",
+    "stylelint-config-standard-scss": "^17.0.0",
+    "stylelint-scss": "^7.2.0",
+    "typescript": "^5"
+  }
+}
