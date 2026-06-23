@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { isRealProduction } from '@/lib/env';
+import { isRealProduction, metadataBase } from '@/lib/env';
 
 export const dynamic = 'force-static';
 
@@ -18,6 +18,6 @@ export default function robots(): MetadataRoute.Robots {
       userAgent: '*',
       allow: '/',
     },
-    sitemap: 'https://www.fumotoryokan.com/sitemap.xml',
+    sitemap: new URL('/sitemap.xml', metadataBase).toString(),
   };
 }

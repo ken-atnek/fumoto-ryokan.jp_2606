@@ -212,7 +212,5 @@ Google Fonts を使う案件では、初期構築時に以下を揃える。
 
 #### 例
 
-- `--font-ibm-plex-sans-jp`
-- `--font-radio-canada-big`
-- `@mixin ibm-plex-sans-jp`
-- `@mixin radio-canada-big`
+- `--font-zen-kaku-gothic-antique`
+- `@mixin zen-kaku-gothic-antique`

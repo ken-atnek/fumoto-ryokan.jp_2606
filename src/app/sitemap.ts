@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next';
-import { isRealProduction } from '@/lib/env';
+import { isRealProduction, metadataBase } from '@/lib/env';
 
 export const dynamic = 'force-static';
 
@@ -10,7 +10,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
 
   return [
     {
-      url: 'https://www.fumotoryokan.com/',
+      url: new URL('/', metadataBase).toString(),
       lastModified: new Date(),
     },
   ];

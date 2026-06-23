@@ -10,6 +10,7 @@
 - 空白行はセクションの切れ目やコメント区切りがある時だけ使う
 - `npm run lint:style` はチェック専用として扱い、自動整形は `npm run lint:style:fix` を明示実行する
 - `lint:style:fix` 実行後も、ネスト内に不要な空白行が残っていれば手で詰める
+- この案件の `.stylelintrc.json` では、空白行追加系ルールは無効化して、`lint:style:fix` で不要な空白行が増えにくい状態にしておく
 - `scss` 生成時は、依頼があるまでスマホ用の記述は追加しない
 - `@include sp` などのモバイル向け分岐は、必要になった段階で追記する
 
@@ -23,12 +24,8 @@
 #### 例
 
 ```scss
-@mixin ibm-plex-sans-jp {
-    font-family: var(--font-ibm-plex-sans-jp), "IBM Plex Sans JP", sans-serif;
-}
-
-@mixin radio-canada-big {
-    font-family: var(--font-radio-canada-big), "Radio Canada Big", sans-serif;
+@mixin zen-kaku-gothic-antique {
+    font-family: var(--font-zen-kaku-gothic-antique), "Zen Kaku Gothic Antique", sans-serif;
 }
 ```
 
