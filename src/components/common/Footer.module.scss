@@ -1,0 +1,180 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 Footer スタイル
+ * URL: /src/components/common/Footer.module.scss
+ * Referenced in: /src/components/common/Footer.tsx
+ * Created: 2026-06-09
+ * Last updated: 2026-06-22
+ * ======================================= */
+
+.footer {
+    padding: 12rem 6.5vw 10.7rem;
+    color: $main-white;
+    background: #3c3232;
+    display: flex;
+    justify-content: space-between;
+    article {
+        display: contents;
+        .infoBlock {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            gap: 5.5rem;
+            width: min(100%, 26rem);
+            .logoLink {
+                display: block;
+                width: 100%;
+                img {
+                    display: block;
+                    width: 100%;
+                }
+            }
+            .contactBlock {
+                width: 100%;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                .itemLink {
+                    position: relative;
+                    width: min(100%, 26rem);
+                    height: 5rem;
+                    background-color: $main-green;
+                    border-radius: 0.5rem;
+                    padding-left: 1.7rem;
+                    display: flex;
+                    align-items: center;
+                    font-size: inherit;
+                    &::after {
+                        content: "";
+                        position: absolute;
+                        top: 50%;
+                        translate: 0 -50%;
+                        right: 1.2rem;
+                        width: 5.4rem;
+                        @include svg-arrow-link("fff");
+                    }
+                    span {
+                        font-size: fz(15);
+                        font-weight: 500;
+                        letter-spacing: 0.1em;
+                    }
+                }
+                .reception {
+                    font-size: fz(14);
+                    line-height: 2;
+                    letter-spacing: 0.1em;
+                    margin-top: 1.3rem;
+                }
+                .contactLinks {
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.3rem 0;
+                    margin-top: 2px;
+                    a {
+                        display: flex;
+                        align-items: center;
+                        width: 100%;
+                        height: 5rem;
+                        padding-left: 1.7rem;
+                        border-radius: 0.5rem;
+                        color: $main-gray;
+                        background: #d8ddd2;
+                        font-size: fz(15);
+                        letter-spacing: 0.1em;
+                    }
+                }
+            }
+        }
+        .navArea {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: flex-end;
+            font-size: inherit;
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+                gap: 0 min(3vw, 3.4rem);
+                width: 100%;
+                a {
+                    display: block;
+                    line-height: 0;
+                    svg {
+                        fill: $main-white;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
+                }
+                .linkTop {
+                    width: 1.4rem;
+                    aspect-ratio: 14/47;
+                }
+                .linkHistory {
+                    width: 1.7rem;
+                    aspect-ratio: 17/150;
+                }
+                .linkOnsen {
+                    width: 1.7rem;
+                    aspect-ratio: 17/31;
+                }
+                .linkHigaeri {
+                    width: 1.6rem;
+                    aspect-ratio: 16/82;
+                }
+                .linkRoom {
+                    width: 1.7rem;
+                    aspect-ratio: 17/32;
+                }
+                .linkFood {
+                    width: 1.7rem;
+                    aspect-ratio: 17/47;
+                }
+                .linkSpend {
+                    width: 1.6rem;
+                    aspect-ratio: 16/65;
+                }
+                .linkAccess {
+                    width: 1.4rem;
+                    aspect-ratio: 14/62;
+                }
+                .linkReserve {
+                    width: 1.6rem;
+                    aspect-ratio: 16/31;
+                }
+            }
+            .social {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+                gap: 2rem;
+                width: 100%;
+                font-size: inherit;
+                .socialLabel {
+                    font-size: fz(13);
+                    font-weight: 300;
+                    letter-spacing: 0.2em;
+                }
+                .socialLine {
+                    display: block;
+                    width: 10rem;
+                    height: 1px;
+                    background: $main-white;
+                }
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    width: 2.3rem;
+                    svg {
+                        aspect-ratio: 1;
+                        fill: $main-white;
+                    }
+                }
+            }
+        }
+    }
+}
