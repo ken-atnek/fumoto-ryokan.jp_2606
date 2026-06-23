@@ -3,7 +3,7 @@
  * URL: /src/app/layout.tsx
  * Referenced in: /src/app/layout.tsx
  * Created: 2026-06-16
- * Last updated: 2026-06-22
+ * Last updated: 2026-06-23
  * ======================================= */
 
 import type { Metadata } from 'next';
@@ -18,16 +18,31 @@ const zenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
   weight: ['400', '500', '700'],
 });
 
-const siteTitle = 'ふもと旅館';
+const siteTitle = '【公式】熊本 黒川温泉−ふもと旅館−≪最低価格保証≫';
+const siteName = 'ふもと旅館';
 const siteDescription =
-  '黒川温泉の中心に位置する館内湯巡りの宿。種類豊富な貸切風呂や露天風呂は全て源泉100％かけ流し。誰でも気軽に滞在を楽しめる良心的な宿泊料で、幅広い客層に支持される旅館です。';
+  '黒川温泉の中心にあり、貸切風呂自慢の源泉湯宿。自家源泉かけ流しの本格的な温泉と、九州・熊本の新鮮な食材を使った季節感溢れるお料理をお愉しみいただけます。';
 
 export const metadata: Metadata = {
   title: {
     default: siteTitle,
-    template: `%s | ${siteTitle}`,
+    template: `%s | ${siteName}`,
   },
   description: siteDescription,
+  icons: {
+    icon: [
+      {
+        url: '/favicon/favicon-light.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: light)',
+      },
+      {
+        url: '/favicon/favicon-dark.svg',
+        type: 'image/svg+xml',
+        media: '(prefers-color-scheme: dark)',
+      },
+    ],
+  },
   ...(isRealProduction && {
     metadataBase,
     alternates: {
@@ -37,7 +52,7 @@ export const metadata: Metadata = {
       title: siteTitle,
       description: siteDescription,
       url: '/',
-      siteName: siteTitle,
+      siteName,
       locale: 'ja_JP',
       type: 'website',
     },
