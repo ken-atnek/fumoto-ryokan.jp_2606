@@ -1,0 +1,60 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP Hero スタイル
+ * URL: /src/components/top/TopHero.module.scss
+ * Referenced in: /src/components/top/TopHero.tsx
+ * Created: 2026-07-01
+ * Last updated: 2026-07-01
+ * ======================================= */
+
+.topHero {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 10.7rem;
+    padding-bottom: 10rem;
+}
+
+.blockSlide {
+    flex: 1;
+    height: 70rem;
+    position: relative;
+}
+
+.boxSvgText {
+    padding-inline: 7vw;
+    font-size: inherit;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0 4.8rem;
+
+    svg {
+        fill: #3c3232;
+        width: 100%;
+    }
+}
+
+.itemSvg01 {
+    width: 5.4rem;
+
+    svg {
+        aspect-ratio: 54/316;
+    }
+}
+
+.itemSvg02 {
+    width: 4.6rem;
+
+    svg {
+        aspect-ratio: 46/167;
+    }
+}
+
+.itemSvg03 {
+    width: 5.1rem;
+
+    svg {
+        aspect-ratio: 51/320;
+    }
+}

@@ -3,60 +3,14 @@
  * URL: /src/components/common/Footer.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-06-09
- * Last updated: 2026-06-22
+ * Last updated: 2026-06-30
  * ======================================= */
 
 import Image from 'next/image';
 import styles from './Footer.module.scss';
 import ScrollLink from '@/components/common/ScrollLink';
 import ExternalLink from '@/components/common/ExternalLink';
-
-const footerNavItems = [
-  {
-    href: '/#reservation',
-    label: '予約',
-    svg: 'svgMenuTextReserve',
-    class: 'linkReserve',
-  },
-  {
-    href: '/#access',
-    label: 'アクセス',
-    svg: 'svgMenuTextAccess',
-    class: 'linkAccess',
-  },
-  {
-    href: '/#stay-plan',
-    label: '過ごし方',
-    svg: 'svgMenuTextSpend',
-    class: 'linkSpend',
-  },
-  {
-    href: '/#cuisine',
-    label: 'お食事',
-    svg: 'svgMenuTextFood',
-    class: 'linkFood',
-  },
-  { href: '/#rooms', label: '客室', svg: 'svgMenuTextRoom', class: 'linkRoom' },
-  {
-    href: '/#onsen',
-    label: '日帰り入浴',
-    svg: 'svgMenuTextHigaeri',
-    class: 'linkHigaeri',
-  },
-  {
-    href: '/#onsen',
-    label: '温泉',
-    svg: 'svgMenuTextOnsen',
-    class: 'linkOnsen',
-  },
-  {
-    href: '/#intro',
-    label: 'ふもと旅館のあゆみ',
-    svg: 'svgMenuTextHistory',
-    class: 'linkHistory',
-  },
-  { href: '/#top', label: 'トップ', svg: 'svgMenuTextTop', class: 'linkTop' },
-];
+import { commonNavItems } from '@/data/commonNavItems';
 
 export default function Footer() {
   return (
@@ -95,7 +49,7 @@ export default function Footer() {
 
         <div className={styles.navArea}>
           <nav aria-label="フッターナビゲーション">
-            {footerNavItems.map((item) => (
+            {commonNavItems.map((item) => (
               <ScrollLink
                 href={item.href}
                 className={item.class ? styles[item.class] : undefined}

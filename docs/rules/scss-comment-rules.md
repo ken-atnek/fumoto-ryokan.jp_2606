@@ -30,7 +30,7 @@
 ```scss
 @use "../../styles/foundation/" as *;
 /* =======================================
- * Highlax Header スタイル
+ * ふもと旅館 Header スタイル
  * URL: /src/components/common/Header.module.scss
  * Referenced in: /src/components/common/Header.tsx
  * Created: 2026-06-09
@@ -47,7 +47,7 @@
 ```scss
 @use "../../styles/foundation/" as *;
 /* =======================================
- * Highlax Footer スタイル
+ * ふもと旅館 Footer スタイル
  * URL: /src/components/common/Footer.module.scss
  * Referenced in: /src/components/common/Footer.tsx
  * Created: 2026-06-09
@@ -59,7 +59,7 @@
 
 ```scss
 /* =======================================
- * Highlax グローバルスタイル
+ * ふもと旅館 グローバルスタイル
  * URL: /src/styles/globals.scss
  * Referenced in: /src/app/layout.tsx
  * Created: 2026-06-09

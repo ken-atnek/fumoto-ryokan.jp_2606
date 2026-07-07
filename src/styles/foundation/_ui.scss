@@ -39,65 +39,31 @@
 }
 
 /* =========================================
-TOPページ
+LINKボタン
 ----------------------------------------- */
-
-/* タイトルH2 */
-@mixin top-h2 {
-    font-size: fz(18);
-    @include zen-kaku-gothic-antique;
-    font-weight: 600;
-    text-transform: uppercase;
-    line-height: fz(18);
-    text-box-trim: trim-both;
-    text-box-edge: cap alphabetic;
+@mixin item-link {
+    position: relative;
+    width: min(100%, 26rem);
+    height: 5rem;
+    background-color: $main-green;
+    border-radius: 0.5rem;
+    padding-left: 1.7rem;
     display: flex;
     align-items: center;
-    align-self: flex-start;
-    &::before {
-        content: "（";
-        margin-right: 0.3em;
-    }
-    &::after {
-        content: "）";
-        margin-left: 0.3em;
-    }
-    @include sp {
-        translate: -2.2vw;
-    }
-}
-
-/* ページリンク */
-@mixin page-link {
-    position: relative;
-    color: var(--color);
-    @include zen-kaku-gothic-antique;
-    font-size: fz(40);
-    font-weight: 700;
-    text-transform: uppercase;
-    &::before,
+    font-size: inherit;
     &::after {
         content: "";
         position: absolute;
-        top: calc(100% + 0.2em);
-        height: 1px;
-        background-color: var(--color);
-        transition: 0.3s ease-out;
-        clip-path: inset(0 0 0 0);
-        width: 50%;
+        top: 50%;
+        translate: 0 -50%;
+        right: 1.2rem;
+        width: 5.4rem;
+        @include svg-arrow-link("fff");
     }
-    &::before {
-        left: 0;
-    }
-    &::after {
-        right: 0;
-    }
-    @include hover {
-        &::before {
-            clip-path: inset(0 100% 0 0);
-        }
-        &::after {
-            clip-path: inset(0 0 0 100%);
-        }
+    span {
+        color: $pure-white;
+        font-size: fz(15);
+        font-weight: 500;
+        letter-spacing: 0.1em;
     }
 }

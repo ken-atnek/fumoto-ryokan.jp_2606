@@ -1,0 +1,117 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP アクセスセクション スタイル
+ * URL: /src/components/top/TopAccess.module.scss
+ * Referenced in: /src/components/top/TopAccess.tsx
+ * Created: 2026-07-07
+ * Last updated: 2026-07-07
+ * ======================================= */
+
+.containerTopAccess {
+    padding-top: 20rem;
+    padding-bottom: 14rem;
+    article {
+        padding-left: 6.4vw;
+        .boxTitle {
+            position: relative;
+            display: flex;
+            align-items: center;
+            gap: 0 3rem;
+            font-size: inherit;
+            .itemSvg {
+                width: 8vw;
+                svg {
+                    aspect-ratio: 119/25;
+                }
+            }
+            .titleEn {
+                font-size: fz(16);
+                letter-spacing: 0.1em;
+                display: flex;
+                align-items: center;
+                gap: 0 3rem;
+                &::before {
+                    content: "";
+                    height: 1px;
+                    border-top: 1px solid $main-gray;
+                    width: 10rem;
+                }
+            }
+        }
+        .boxMap {
+            width: min(100%, 80rem);
+            margin-top: 11em;
+            margin-bottom: 4rem;
+            iframe {
+                display: block;
+                width: 100%;
+                max-width: 100%;
+            }
+        }
+        .boxAddress {
+            position: relative;
+            display: grid;
+            grid-template-columns: auto auto;
+            width: fit-content;
+            font-size: inherit;
+            gap: 0 7rem;
+            h3 {
+                padding-top: 1.6rem;
+                color: $main-gray;
+                font-size: fz(24);
+                font-weight: 700;
+            }
+
+            .itemIllust {
+                grid-row: span 2;
+                width: 20rem;
+            }
+            address {
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-size: fz(16);
+                    letter-spacing: 0.1em;
+                    line-height: 1.7;
+                }
+            }
+        }
+        .boxIllustMap {
+            position: relative;
+            display: flex;
+            align-items: center;
+            height: 4vw;
+            span {
+                position: relative;
+                border-top: 1px solid $main-gray;
+                width: 47.2vw;
+                &::after {
+                    content: "";
+                    position: absolute;
+                    top: 50%;
+                    translate: 0 -50%;
+                    width: 1rem;
+                    aspect-ratio: 1;
+                    background-color: $main-gray;
+                    border-radius: 50%;
+                    right: 0;
+                }
+            }
+            &::after {
+                content: "";
+                position: absolute;
+                left: 42vw;
+                bottom: -5.5vw;
+                width: 40vw;
+                aspect-ratio: 578/771;
+                background: url(/images/top/svg-map.svg) no-repeat center
+                    center/contain;
+            }
+        }
+        .itemLink {
+            @include item-link;
+        }
+    }
+}

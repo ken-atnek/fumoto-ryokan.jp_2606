@@ -1,0 +1,31 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 画像フェードカルーセル スタイル
+ * URL: /src/components/common/ImageFadeCarousel.module.scss
+ * Referenced in: /src/components/common/ImageFadeCarousel.tsx
+ * Created: 2026-07-02
+ * Last updated: 2026-07-02
+ * ======================================= */
+
+.imageFadeCarousel {
+    position: relative;
+    width: 100%;
+    aspect-ratio: var(--image-aspect-ratio, 1 / 1);
+    overflow: hidden;
+    border-radius: inherit;
+}
+
+.itemImage {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    opacity: 0;
+    transition: opacity var(--fade-duration, 1400ms) ease;
+
+    &.is-active {
+        opacity: 1;
+    }
+}

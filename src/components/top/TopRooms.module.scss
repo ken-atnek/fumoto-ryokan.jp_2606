@@ -1,0 +1,76 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP 客室セクション スタイル
+ * URL: /src/components/top/TopRooms.module.scss
+ * Referenced in: /src/components/top/TopRooms.tsx
+ * Created: 2026-07-02
+ * Last updated: 2026-07-02
+ * ======================================= */
+
+.containerTopRooms {
+    padding: 16rem 0 11rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    .boxTopImages,
+    .boxBottomImages,
+    .boxRightImages {
+        position: relative;
+        font-size: inherit;
+        width: 100%;
+        .title {
+            position: absolute;
+            font-size: fz(14);
+            color: $pure-white;
+            letter-spacing: 0.1em;
+        }
+        img {
+            width: 100%;
+            aspect-ratio: 660/458;
+            object-fit: cover;
+            border-radius: 1rem;
+        }
+    }
+    .boxTopImages,
+    .boxRightImages {
+        .title {
+            top: 1.8em;
+            right: 1.8em;
+        }
+    }
+    .boxBottomImages {
+        .title {
+            bottom: 1.8em;
+            right: 1.8em;
+        }
+    }
+    .blockLeftImages {
+        padding-right: 4vw;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        gap: 7.2rem 0;
+        width: 100%;
+        padding-top: 10rem;
+    }
+    article {
+        padding-left: 4vw;
+        display: flex;
+        flex-direction: column;
+        gap: 7.4rem 0;
+        h2 {
+            align-self: center;
+            width: 18.8rem;
+        }
+        p {
+            font-size: fz(16);
+            letter-spacing: 0.1em;
+            line-height: 2.5;
+            max-width: 33em;
+            text-align: justify;
+        }
+        .itemLink {
+            @include item-link;
+        }
+    }
+}

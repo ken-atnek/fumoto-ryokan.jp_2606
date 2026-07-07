@@ -1,0 +1,142 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP 温泉セクション スタイル
+ * URL: /src/components/top/TopOnsen.module.scss
+ * Referenced in: /src/components/top/TopOnsen.tsx
+ * Created: 2026-07-06
+ * Last updated: 2026-07-06
+ * ======================================= */
+
+.containerTopOnsen {
+    display: flex;
+    flex-direction: column;
+    padding: 20rem 0 36rem;
+    gap: 10rem 0;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 10vw;
+        width: 14rem;
+        background: url("/images/top/illust-noren.webp") no-repeat center
+            center/contain;
+        aspect-ratio: 143/136;
+    }
+
+    .boxPrivateOnsen {
+        display: flex;
+        gap: 0 6vw;
+        padding-right: 7vw;
+        .boxImageGrid {
+            flex: 1;
+        }
+        .boxDetails {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 34rem;
+            h2 {
+                width: 17rem;
+                align-self: center;
+            }
+            h3 {
+                width: 3.4rem;
+                align-self: center;
+                svg {
+                    aspect-ratio: 34/175;
+                }
+            }
+            .boxBottom {
+                align-self: center;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                p {
+                    font-size: fz(16);
+                    font-weight: 500;
+                    line-height: 2.5em;
+                    margin-bottom: 4rem;
+                    text-align: justify;
+                    max-width: 21em;
+                    letter-spacing: 0.1em;
+                }
+                .itemLink {
+                    @include item-link;
+                }
+            }
+        }
+    }
+    .boxDayTripOnsen {
+        display: flex;
+        gap: 0 6vw;
+        padding-left: 7vw;
+        .boxLead {
+            font-size: inherit;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 35rem;
+            padding-top: 6.4rem;
+            h3 {
+                width: 3.5rem;
+                align-self: center;
+                svg {
+                    aspect-ratio: 35/176;
+                }
+            }
+            .boxBottom {
+                align-self: center;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                p {
+                    font-size: fz(16);
+                    font-weight: 500;
+                    line-height: 2.5em;
+                    margin-bottom: 5rem;
+                    text-align: justify;
+                    max-width: 21em;
+                    letter-spacing: 0.1em;
+                }
+                .wrapLink {
+                    display: flex;
+                    flex-direction: column;
+                    font-size: inherit;
+                    gap: 2rem 0;
+                    .itemLink {
+                        @include item-link;
+                    }
+                    .itemLinkRealtime {
+                        @include item-link;
+                        background-color: #71645e;
+                    }
+                }
+            }
+        }
+        .boxImageStack {
+            flex: 1;
+            font-size: inherit;
+            .boxHeadImages,
+            .boxFootImages {
+                position: relative;
+                width: 100%;
+                font-size: inherit;
+                h4 {
+                    position: absolute;
+                    color: $pure-white;
+                    font-size: fz(14);
+                    top: 1em;
+                    left: 1em;
+                    letter-spacing: 0.1em;
+                }
+                img {
+                    width: 100%;
+                    aspect-ratio: 900/350;
+                    object-fit: cover;
+                }
+            }
+        }
+    }
+}

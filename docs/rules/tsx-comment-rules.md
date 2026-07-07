@@ -54,7 +54,7 @@
 
 ```tsx
 /* =======================================
- * Highlax TOP Hero セクション
+ * ふもと旅館 TOP Hero セクション
  * URL: /src/components/top/TopHero.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-06-10

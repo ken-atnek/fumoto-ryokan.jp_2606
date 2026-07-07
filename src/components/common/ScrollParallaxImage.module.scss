@@ -1,0 +1,26 @@
+@use "../../styles/foundation/" as *;
+/* =======================================
+ * ふもと旅館 スクロール連動パララックス画像 スタイル
+ * URL: /src/components/common/ScrollParallaxImage.module.scss
+ * Referenced in: /src/components/common/ScrollParallaxImage.tsx
+ * Created: 2026-07-01
+ * Last updated: 2026-07-01
+ * ======================================= */
+
+.itemParallax {
+    width: 100%;
+    will-change: transform;
+
+    // JSの更新間隔のブレをここで滑らかに補間し、体感のカクつきを抑える
+    transition: transform 0.1s linear;
+}
+.itemFadeIn {
+    width: 100%;
+    opacity: 0;
+    transform: translateY(3rem);
+    transition: opacity 1s ease, transform 1s ease;
+    &.is-visible {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}

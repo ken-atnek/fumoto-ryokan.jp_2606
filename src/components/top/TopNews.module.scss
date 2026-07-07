@@ -1,0 +1,86 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP News スタイル
+ * URL: /src/components/top/TopNews.module.scss
+ * Referenced in: /src/components/top/TopNews.tsx
+ * Created: 2026-07-01
+ * Last updated: 2026-07-01
+ * ======================================= */
+
+.containerTopNews {
+    padding: 9.6rem 0 14rem;
+    .boxTitle {
+        padding-left: 10vw;
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 0 3rem;
+        font-size: inherit;
+        .itemSvg {
+            width: 8.26vw;
+            svg {
+                aspect-ratio: 119/25;
+            }
+        }
+        .titleEn {
+            font-size: fz(16);
+            letter-spacing: 0.1em;
+            display: flex;
+            align-items: center;
+            gap: 0 3rem;
+            &::before {
+                content: "";
+                height: 1px;
+                border-top: 1px solid $main-gray;
+                width: 10rem;
+            }
+        }
+    }
+    article {
+        display: flex;
+        flex-direction: column;
+        padding-inline: 4vw;
+        .boxList {
+            display: grid;
+            grid-template-columns: auto 1fr;
+            font-size: inherit;
+            width: 100%;
+            max-width: 885px;
+            align-self: flex-end;
+            margin-bottom: 6.4rem;
+            margin-top: 3rem;
+            .itemError {
+                grid-column: span 2;
+                margin: 0;
+                padding-block: 2.4rem;
+                color: #8a4d4d;
+                font-size: fz(15);
+                letter-spacing: 0.08em;
+            }
+            .itemNews {
+                grid-column: span 2;
+                display: grid;
+                grid-template-columns: subgrid;
+                border-bottom: 1px solid #9c948c;
+                padding-block: 3em;
+                font-size: inherit;
+                align-items: center;
+                gap: 0 2.4em;
+                .itemDate {
+                    font-size: fz(15);
+                    letter-spacing: 0.1em;
+                    white-space: nowrap;
+                }
+                .itemText {
+                    font-size: fz(18);
+                    font-weight: 500;
+                }
+            }
+        }
+        .itemLink {
+            align-self: flex-end;
+            @include item-link;
+        }
+    }
+}

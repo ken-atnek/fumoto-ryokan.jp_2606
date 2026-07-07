@@ -5,8 +5,8 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "build:demo": "cross-env NEXT_PUBLIC_IS_REAL_PROD=false NEXT_PUBLIC_METADATA_BASE=https://demo.fumotoryokan.com/ next build",
-    "build:prod": "cross-env NEXT_PUBLIC_IS_REAL_PROD=true NEXT_PUBLIC_METADATA_BASE=https://www.fumotoryokan.com/ next build",
+    "build:demo": "cross-env NEXT_PUBLIC_IS_REAL_PROD=false NEXT_PUBLIC_METADATA_BASE=https://demo-fumoto-ryokan.tuna-pic.co.jp/ next build && rimraf out/db",
+    "build:prod": "cross-env NEXT_PUBLIC_IS_REAL_PROD=true NEXT_PUBLIC_METADATA_BASE=https://www.fumotoryokan.com/ next build && rimraf out/db",
     "start": "next start",
     "lint": "eslint .",
     "lint:style": "stylelint \"src/**/*.scss\"",

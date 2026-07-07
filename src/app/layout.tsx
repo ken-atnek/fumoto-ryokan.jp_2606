@@ -11,6 +11,8 @@ import { Zen_Kaku_Gothic_Antique } from 'next/font/google';
 import SvgDefs from '@/components/SvgDefs';
 import { isRealProduction, metadataBase } from '@/lib/env';
 import '@/styles/globals.scss';
+import Footer from '@/components/common/Footer';
+import Header from '@/components/common/Header';
 
 const zenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
   variable: '--font-zen-kaku-gothic-antique',
@@ -73,8 +75,10 @@ export default function RootLayout({
   return (
     <html lang="ja" className={zenKakuGothicAntique.variable}>
       <body>
+        <Header />
         <SvgDefs />
         {children}
+        <Footer />
       </body>
     </html>
   );

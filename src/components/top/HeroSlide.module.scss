@@ -1,0 +1,102 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 TOP Hero スライド スタイル
+ * URL: /src/components/top/HeroSlide.module.scss
+ * Referenced in: /src/components/top/HeroSlide.tsx
+ * Created: 2026-07-01
+ * Last updated: 2026-07-01
+ * ======================================= */
+
+.innerSlide {
+    --slide-corner-w: 2rem;
+    --slide-corner-h: 3rem;
+    --slide-corner-lg-w: 2.4rem;
+    --slide-corner-lg-h: 5rem;
+    --slide-corner-lg-y: 4rem;
+    --slide-corner-sm-w: 1rem;
+    --slide-corner-sm-h: 2.6rem;
+    --slide-corner-sm-y: 11rem;
+    position: absolute;
+    top: 0;
+    right: 0;
+    display: flex;
+    flex-direction: row-reverse;
+    gap: 0 2rem;
+    overflow: hidden;
+    border-radius: 1rem 0 0 1rem;
+    -webkit-mask:
+        radial-gradient(
+            ellipse var(--slide-corner-lg-w) var(--slide-corner-lg-h) at 100%
+                var(--slide-corner-lg-y),
+            transparent 99%,
+            #000 100%
+        ),
+        radial-gradient(
+            ellipse var(--slide-corner-sm-w) var(--slide-corner-sm-h) at 100%
+                var(--slide-corner-sm-y),
+            transparent 99%,
+            #000 100%
+        ),
+        radial-gradient(
+            ellipse var(--slide-corner-w) var(--slide-corner-h) at 100% 100%,
+            transparent 99%,
+            #000 100%
+        );
+    -webkit-mask-size: 100% 100%;
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-composite: destination-in;
+    mask:
+        radial-gradient(
+            ellipse var(--slide-corner-lg-w) var(--slide-corner-lg-h) at 100%
+                var(--slide-corner-lg-y),
+            transparent 99%,
+            #000 100%
+        ),
+        radial-gradient(
+            ellipse var(--slide-corner-sm-w) var(--slide-corner-sm-h) at 100%
+                var(--slide-corner-sm-y),
+            transparent 99%,
+            #000 100%
+        ),
+        radial-gradient(
+            ellipse var(--slide-corner-w) var(--slide-corner-h) at 100% 100%,
+            transparent 99%,
+            #000 100%
+        );
+    mask-size: 100% 100%;
+    mask-repeat: no-repeat;
+    mask-composite: intersect;
+
+    img {
+        width: 46.7rem;
+        aspect-ratio: 467/700;
+        object-fit: cover;
+        border-radius: 1rem;
+        animation: hero-pan-r 60s ease-out infinite alternate;
+
+        &:nth-child(2n) {
+            animation-name: hero-pan-l;
+        }
+    }
+}
+
+@keyframes hero-pan-r {
+    from {
+        object-position: 0% center;
+    }
+
+    to {
+        object-position: 100% center;
+    }
+}
+
+@keyframes hero-pan-l {
+    from {
+        object-position: 100% center;
+    }
+
+    to {
+        object-position: 0% center;
+    }
+}

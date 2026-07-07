@@ -1,9 +1,9 @@
 /* =======================================
- * Highlax ExternalLink
+ * ふもと旅館 ExternalLink
  * URL: /src/components/common/ExternalLink.tsx
  * Referenced in: /src/components/common/Footer.tsx
  * Created: 2026-06-09
- * Last updated: 2026-06-09
+ * Last updated: 2026-06-30
  * ======================================= */
 
 import type { AnchorHTMLAttributes, ReactNode } from 'react';
