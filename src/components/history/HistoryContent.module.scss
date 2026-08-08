@@ -1,0 +1,71 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 あゆみページ コンテンツ スタイル
+ * URL: /src/components/history/HistoryContent.module.scss
+ * Referenced in: /src/components/history/HistoryContent.tsx
+ * Created: 2026-08-08
+ * Last updated: 2026-08-08
+ * ======================================= */
+
+.containerHistory {
+    padding-top: 10rem;
+    .pageTitle {
+        width: min(22vw, 315px);
+        margin: 0 16vw 7rem auto;
+        .titleImage {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .historyBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        & + .historyBlock {
+            margin-top: 10rem;
+        }
+    }
+    .textBlock {
+        width: min(100%, 520px);
+        padding-inline: 2rem;
+        margin-bottom: 7.4rem;
+    }
+    h2 {
+        display: flex;
+        flex-direction: column;
+        gap: 0.6rem;
+        font-size: fz(28);
+        font-weight: 700;
+        line-height: 1.9;
+        letter-spacing: 0.14em;
+        margin-bottom: 3.2rem;
+    }
+    .bodyText {
+        margin-top: 3rem;
+        p {
+            font-size: fz(16);
+            font-weight: 500;
+            line-height: 2.6;
+            letter-spacing: 0.1em;
+            color: $main-gray;
+            & + p {
+                margin-top: 1.5rem;
+            }
+        }
+    }
+    .itemLink {
+        @include item-link;
+        margin-top: 4rem;
+    }
+    .imageBlock {
+        width: 100%;
+        img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 1440 / 520;
+            object-fit: cover;
+        }
+    }
+}

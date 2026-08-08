@@ -44,10 +44,10 @@ export const commonNavItems: CommonNavItem[] = [
     class: 'linkOnsen',
   },
   {
-    href: '/#intro',
+    href: '/history/',
     label: 'ふもと旅館のあゆみ',
     svg: 'svgMenuTextHistory',
     class: 'linkHistory',
   },
-  { href: '/#top', label: 'トップ', svg: 'svgMenuTextTop', class: 'linkTop' },
+  { href: '/', label: 'トップ', svg: 'svgMenuTextTop', class: 'linkTop' },
 ];

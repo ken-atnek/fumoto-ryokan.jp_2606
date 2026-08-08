@@ -13,64 +13,67 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    padding: 7rem 2vw 0;
     article {
         display: flex;
         justify-content: space-between;
         .itemLogo {
             width: 255px;
         }
-        nav {
-            display: flex;
-            justify-content: flex-end;
-            align-items: flex-start;
-            gap: 0 min(3vw, 3.4rem);
-            width: 100%;
-            a {
-                display: block;
-                line-height: 0;
-                svg {
-                    fill: $main-gray;
+        .boxMenu {
+            position: relative;
+            font-size: inherit;
+            nav {
+                display: flex;
+                justify-content: flex-end;
+                align-items: flex-start;
+                gap: 0 min(3vw, 3.4rem);
+                width: 100%;
+                a {
                     display: block;
-                    width: 100%;
-                    height: 100%;
+                    line-height: 0;
+                    svg {
+                        fill: $main-gray;
+                        display: block;
+                        width: 100%;
+                        height: 100%;
+                    }
                 }
-            }
-            .linkTop {
-                width: 1.4rem;
-                aspect-ratio: 14/47;
-            }
-            .linkHistory {
-                width: 1.7rem;
-                aspect-ratio: 17/150;
-            }
-            .linkOnsen {
-                width: 1.7rem;
-                aspect-ratio: 17/31;
-            }
-            .linkHigaeri {
-                width: 1.6rem;
-                aspect-ratio: 16/82;
-            }
-            .linkRoom {
-                width: 1.7rem;
-                aspect-ratio: 17/32;
-            }
-            .linkFood {
-                width: 1.7rem;
-                aspect-ratio: 17/47;
-            }
-            .linkSpend {
-                width: 1.6rem;
-                aspect-ratio: 16/65;
-            }
-            .linkAccess {
-                width: 1.4rem;
-                aspect-ratio: 14/62;
-            }
-            .linkReserve {
-                width: 1.6rem;
-                aspect-ratio: 16/31;
+                .linkTop {
+                    width: 1.4rem;
+                    aspect-ratio: 14/47;
+                }
+                .linkHistory {
+                    width: 1.7rem;
+                    aspect-ratio: 17/150;
+                }
+                .linkOnsen {
+                    width: 1.7rem;
+                    aspect-ratio: 17/31;
+                }
+                .linkHigaeri {
+                    width: 1.6rem;
+                    aspect-ratio: 16/82;
+                }
+                .linkRoom {
+                    width: 1.7rem;
+                    aspect-ratio: 17/32;
+                }
+                .linkFood {
+                    width: 1.7rem;
+                    aspect-ratio: 17/47;
+                }
+                .linkSpend {
+                    width: 1.6rem;
+                    aspect-ratio: 16/65;
+                }
+                .linkAccess {
+                    width: 1.4rem;
+                    aspect-ratio: 14/62;
+                }
+                .linkReserve {
+                    width: 1.6rem;
+                    aspect-ratio: 16/31;
+                }
             }
         }
     }
@@ -78,6 +81,14 @@
         padding: 4vw 6vw;
     }
     &[data-page-type="top"] {
+        padding: 7rem 2vw 0;
+        .boxMenu {
+            display: block;
+
+            .contactBlock {
+                display: none;
+            }
+        }
         &::before {
             content: "";
             position: absolute;
@@ -89,55 +100,139 @@
             aspect-ratio: 1440/248;
             z-index: 1;
         }
+        .hamburgerButton {
+            display: none;
+        }
     }
     &[data-page-type="sub"] {
-    }
-
-    .hamburgerButton {
-        position: fixed;
-        top: 5vw;
-        right: 4vw;
-        width: 8vw;
-        aspect-ratio: 1;
-        z-index: 90;
-        display: none;
-        @include sp {
-            display: block;
-        }
-        span {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            width: 100%;
-            height: 2px;
-            background-color: $pure-white;
-            transition: 0.3s ease-out;
-            &:nth-of-type(1) {
-                translate: -50% calc(-50% - 8px);
-                clip-path: inset(0 0 0 20%);
+        padding: 3.5rem 2vw 0;
+        z-index: 10;
+        article {
+            .itemLogo {
+                width: 126px;
             }
-            &:nth-of-type(2) {
-                translate: -50% -50%;
-            }
-            &:nth-of-type(3) {
-                translate: -50% calc(-50% + 8px);
-                clip-path: inset(0 0 0 40%);
-            }
-        }
-        &.is-open {
-            span {
-                &:nth-of-type(1) {
-                    translate: -50% -50%;
-                    rotate: 45deg;
-                    clip-path: inset(0);
+            .boxMenu {
+                position: fixed;
+                width: 100%;
+                display: flex;
+                padding-left: 8vw;
+                padding-right: 16rem;
+                padding-top: 15rem;
+                padding-bottom: 5rem;
+                transition: 0.3s ease-out;
+                opacity: 0;
+                transform: translateY(-55rem);
+                &.is-open {
+                    opacity: 1;
+                    transform: translateY(0);
                 }
-                &:nth-of-type(2) {
+                &::before {
+                    content: "";
+                    position: absolute;
+                    right: 0;
+                    bottom: 0;
+                    width: calc(100% + 4vw);
+                    height: calc(100% + 4rem);
+                    background: url(/images/common/bg-white.webp) no-repeat
+                        center center / cover;
+                    z-index: -1;
+                }
+                .contactBlock {
+                    width: 100%;
+                    max-width: 26rem;
+                    font-size: inherit;
+                    display: flex;
+                    flex-direction: column;
+                    color: #71645e;
+                    .itemLink {
+                        @include item-link;
+                    }
+                    .reception {
+                        font-size: fz(14);
+                        line-height: 2;
+                        letter-spacing: 0.1em;
+                        margin-top: 1.3rem;
+                    }
+                    .contactLinks {
+                        font-size: inherit;
+                        display: flex;
+                        flex-direction: column;
+                        gap: 1.3rem 0;
+                        margin-top: 2px;
+                        a {
+                            display: flex;
+                            align-items: center;
+                            width: 100%;
+                            height: 5rem;
+                            padding-left: 1.7rem;
+                            border-radius: 0.5rem;
+                            color: $main-gray;
+                            background: #d8ddd2;
+                            font-size: fz(15);
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                    .social {
+                        display: flex;
+                        align-items: center;
+                        justify-content: space-between;
+                        gap: 2rem;
+                        width: 100%;
+                        font-size: inherit;
+                        margin-top: 5rem;
+                        .socialLabel {
+                            font-size: fz(13);
+                            font-weight: 300;
+                            letter-spacing: 0.2em;
+                        }
+                        .socialLine {
+                            display: block;
+                            flex: 1;
+                            height: 1px;
+                            background: #231815;
+                        }
+                        a {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            width: 2.3rem;
+                            svg {
+                                aspect-ratio: 1;
+                                fill: #231815;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .hamburgerButton {
+            position: fixed;
+            top: 64px;
+            right: 48px;
+            width: 64px;
+            aspect-ratio: 64/50;
+            z-index: 90;
+            img {
+                position: absolute;
+                inset: 0;
+                margin: auto;
+                display: block;
+                &.isOpen {
+                    opacity: 1;
+                }
+                &.isClose {
                     opacity: 0;
                 }
-                &:nth-of-type(3) {
-                    translate: -50% -50%;
-                    rotate: -45deg;
-                    clip-path: inset(0);
+            }
+
+            &.is-open {
+                img {
+                    &.isOpen {
+                        opacity: 0;
+                    }
+                    &.isClose {
+                        opacity: 1;
+                    }
                 }
             }
         }

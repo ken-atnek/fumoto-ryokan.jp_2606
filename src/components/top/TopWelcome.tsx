@@ -76,7 +76,7 @@ export default function TopWelcome() {
               speed={0.26}
             />
           </div>
-          <ScrollLink href="/#reservation" className={styles.itemLink}>
+          <ScrollLink href="/history/" className={styles.itemLink}>
             <span>ふもと旅館のあゆみ</span>
           </ScrollLink>
         </div>
