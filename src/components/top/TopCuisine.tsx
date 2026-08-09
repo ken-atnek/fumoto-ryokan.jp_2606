@@ -12,7 +12,7 @@ import ScrollLink from '@/components/common/ScrollLink';
 import ScrollParallaxImage from '@/components/common/ScrollParallaxImage';
 export default function TopCuisine() {
   return (
-    <section className={styles.containerTopCuisine}>
+    <section id="cuisine" className={styles.containerTopCuisine}>
       <h2>
         <Image
           src="/images/top/illust-zen.webp"
@@ -57,7 +57,7 @@ export default function TopCuisine() {
         </div>
       </article>
       <div className={styles.boxBottom}>
-        <ScrollLink href="/#reservation" className={styles.itemLink}>
+        <ScrollLink href="/cuisine/" className={styles.itemLink}>
           <span>お食事</span>
         </ScrollLink>
         <div className={styles.boxBottomImage}>

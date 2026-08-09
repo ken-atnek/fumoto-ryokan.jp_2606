@@ -25,7 +25,7 @@ export const commonNavItems: CommonNavItem[] = [
     class: 'linkSpend',
   },
   {
-    href: '/#cuisine',
+    href: '/cuisine/',
     label: 'お食事',
     svg: 'svgMenuTextFood',
     class: 'linkFood',

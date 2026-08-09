@@ -5,67 +5,106 @@
  * URL: /src/components/history/HistoryContent.module.scss
  * Referenced in: /src/components/history/HistoryContent.tsx
  * Created: 2026-08-08
- * Last updated: 2026-08-08
+ * Last updated: 2026-08-09
  * ======================================= */
 
 .containerHistory {
     padding-top: 10rem;
-    .pageTitle {
+    display: flex;
+    flex-direction: column;
+
+    .pageTitleBlock {
+        position: relative;
         width: min(22vw, 315px);
-        margin: 0 16vw 7rem auto;
+        margin: 0 16vw 0 auto;
+    }
+    .pageTitle {
+        font-size: inherit;
         .titleImage {
             display: block;
             width: 100%;
             height: auto;
         }
     }
+    .boxFoot {
+        position: relative;
+        font-size: inherit;
+        display: flex;
+        flex-direction: column;
+        width: 96px;
+        gap: 2rem 0;
+        margin-top: 4.7rem;
+        img {
+            scale: -1 -1;
+            width: 3.8rem;
+            opacity: 0;
+            translate: 0 -1rem;
+            transition:
+                opacity 0.8s ease,
+                translate 0.8s ease;
+            &.footLeft {
+                align-self: flex-end;
+                transition-delay: 0.3s;
+            }
+        }
+        &.isActive {
+            img {
+                opacity: 1;
+                translate: 0;
+            }
+        }
+    }
+    .pageTitleBlock {
+        .boxFoot {
+            position: absolute;
+            left: 50%;
+            translate: -50%;
+            top: calc(100% + 10em);
+            margin-top: 0;
+        }
+    }
     .historyBlock {
         display: flex;
         flex-direction: column;
         align-items: center;
-        & + .historyBlock {
-            margin-top: 10rem;
-        }
-    }
-    .textBlock {
-        width: min(100%, 520px);
-        padding-inline: 2rem;
-        margin-bottom: 7.4rem;
-    }
-    h2 {
-        display: flex;
-        flex-direction: column;
-        gap: 0.6rem;
-        font-size: fz(28);
-        font-weight: 700;
-        line-height: 1.9;
-        letter-spacing: 0.14em;
-        margin-bottom: 3.2rem;
-    }
-    .bodyText {
-        margin-top: 3rem;
-        p {
-            font-size: fz(16);
-            font-weight: 500;
-            line-height: 2.6;
-            letter-spacing: 0.1em;
-            color: $main-gray;
-            & + p {
-                margin-top: 1.5rem;
+        .textBlock {
+            font-size: inherit;
+            width: min(100%, 600px);
+            padding-inline: 2rem;
+            margin-bottom: 11rem;
+            h2 {
+                display: flex;
+                flex-direction: column;
+                font-size: fz(28);
+                font-weight: 700;
+                letter-spacing: 0.14em;
+                margin-top: 10rem;
+                span {
+                    line-height: 2;
+                }
+            }
+            .bodyText {
+                margin-top: 4rem;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                span {
+                    font-size: fz(18);
+                    font-weight: 500;
+                    line-height: 2.6;
+                    letter-spacing: 0.1em;
+                    color: $main-gray;
+                }
             }
         }
-    }
-    .itemLink {
-        @include item-link;
-        margin-top: 4rem;
-    }
-    .imageBlock {
-        width: 100%;
-        img {
-            display: block;
+        .imageBlock {
             width: 100%;
-            aspect-ratio: 1440 / 520;
-            object-fit: cover;
+            img {
+                display: block;
+                width: 100%;
+                aspect-ratio: 1440 / 520;
+                object-fit: cover;
+            }
         }
     }
 }

@@ -17,7 +17,7 @@ import Header from '@/components/common/Header';
 const zenKakuGothicAntique = Zen_Kaku_Gothic_Antique({
   variable: '--font-zen-kaku-gothic-antique',
   subsets: ['latin'],
-  weight: ['400', '500', '700'],
+  weight: ['300', '400', '500', '700'],
 });
 
 const siteTitle = '【公式】熊本 黒川温泉−ふもと旅館−≪最低価格保証≫';
