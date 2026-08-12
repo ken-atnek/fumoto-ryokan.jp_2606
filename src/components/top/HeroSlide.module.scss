@@ -5,7 +5,7 @@
  * URL: /src/components/top/HeroSlide.module.scss
  * Referenced in: /src/components/top/HeroSlide.tsx
  * Created: 2026-07-01
- * Last updated: 2026-07-01
+ * Last updated: 2026-08-11
  * ======================================= */
 
 .innerSlide {
@@ -74,24 +74,10 @@
         object-fit: cover;
         border-radius: 1rem;
         animation: hero-pan-r 60s ease-out infinite alternate;
-
-        &:nth-child(2n) {
-            animation-name: hero-pan-l;
-        }
     }
 }
 
 @keyframes hero-pan-r {
-    from {
-        object-position: 0% center;
-    }
-
-    to {
-        object-position: 100% center;
-    }
-}
-
-@keyframes hero-pan-l {
     from {
         object-position: 100% center;
     }

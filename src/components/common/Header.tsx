@@ -3,7 +3,7 @@
  * URL: /src/components/common/Header.tsx
  * Referenced in: /src/app/layout.tsx
  * Created: 2026-06-09
- * Last updated: 2026-08-08
+ * Last updated: 2026-08-11
  * ======================================= */
 
 'use client';
@@ -76,7 +76,7 @@ export default function Header() {
           ref={navRef}
           className={clsx(styles.boxMenu, isOpen && styles['is-open'])}
         >
-          <div className={styles.contactBlock}>
+          <div className={styles.contactBlock} onClick={onClose}>
             <ScrollLink href="/#reservation" className={styles.itemLink}>
               <span>ご予約はこちら</span>
             </ScrollLink>
@@ -100,7 +100,7 @@ export default function Header() {
               </ExternalLink>
             </div>
           </div>
-          <nav aria-label="フッターナビゲーション">
+          <nav aria-label="ナビゲーション" onClick={onClose}>
             {commonNavItems.map((item) => (
               <ScrollLink
                 href={item.href}

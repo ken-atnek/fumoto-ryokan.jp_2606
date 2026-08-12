@@ -84,7 +84,7 @@ export default function TopOnsen() {
               緑に囲まれた野趣溢れる空間で源泉100％かけ流しの温泉をご堪能くださいませ。
             </p>
             <div className={styles.wrapLink}>
-              <ScrollLink href="/news/" className={styles.itemLink}>
+              <ScrollLink href="/dayuse/" className={styles.itemLink}>
                 <span>日帰り温泉 大浴場</span>
               </ScrollLink>
               <ScrollLink href="/news/" className={styles.itemLinkRealtime}>

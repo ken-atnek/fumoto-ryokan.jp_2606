@@ -1,0 +1,311 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 日帰り入浴ページ コンテンツ スタイル
+ * URL: /src/components/dayuse/DayuseContent.module.scss
+ * Referenced in: /src/components/dayuse/DayuseContent.tsx
+ * Created: 2026-08-11
+ * Last updated: 2026-08-11
+ * ======================================= */
+
+.hero {
+    position: relative;
+    padding-top: 10rem;
+    padding-bottom: 30rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    h1 {
+        position: relative;
+        width: min(18.2rem, 12.6vw);
+        margin: 0 16vw 0 auto;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 80%;
+            left: 0;
+            width: 45%;
+            background: url("/images/top/illust-noren.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 143/136;
+            scale: -1 1;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .bathNav {
+        position: absolute;
+        top: 27rem;
+        left: 50%;
+        display: flex;
+        gap: 0 6rem;
+        translate: -50%;
+        font-size: inherit;
+        a {
+            display: block;
+            transition: 0.3s ease;
+            border-radius: 5px;
+            padding: 2em 1em;
+            border: 1px solid transparent;
+            @include hover {
+                border-color: #71645e;
+            }
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+    }
+}
+
+/*======================================
+うえん湯・もみじの湯
+--------------------------------------*/
+.bathSection {
+    scroll-margin-top: 8rem;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 4rem 0;
+    .mainVisual {
+        position: relative;
+        width: 100%;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 1446 / 763;
+            object-fit: cover;
+        }
+        h2 {
+            position: absolute;
+            top: -4rem;
+            left: 6.8vw;
+            width: 12.3rem;
+            img {
+                aspect-ratio: auto;
+                object-fit: contain;
+            }
+        }
+    }
+    .bathBody {
+        display: grid;
+        gap: 0 5vw;
+        align-items: start;
+        font-size: inherit;
+        .textBlock {
+            padding-top: 8.8rem;
+            font-size: inherit;
+            .leadText {
+                font-size: fz(20);
+                font-weight: 700;
+                letter-spacing: 0.2em;
+            }
+            .bodyText {
+                margin-top: 3rem;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                span {
+                    font-size: fz(16);
+                    font-weight: 500;
+                    line-height: 2;
+                    letter-spacing: 0.12em;
+                    color: $main-gray;
+                    text-align: justify;
+                }
+            }
+            img {
+                width: 100%;
+                aspect-ratio: 853 / 568;
+                object-fit: cover;
+                border-radius: 1rem;
+                margin-top: 15.2rem;
+            }
+            .linkBlock {
+                margin-left: auto;
+            }
+        }
+        .sideImages {
+            display: flex;
+            flex-direction: column;
+            gap: 8.5rem 0;
+            img {
+                width: 100%;
+                border-radius: 1rem;
+                object-fit: cover;
+            }
+        }
+        .linkBlock {
+            display: flex;
+            flex-direction: column;
+            gap: 3.6rem 0;
+            width: min(100%, 26rem);
+            font-size: inherit;
+            margin-right: 4rem;
+            align-self: flex-end;
+
+            a {
+                position: relative;
+                display: flex;
+                align-items: center;
+                min-height: 5rem;
+                border-radius: 0.5rem;
+                transition: opacity 0.3s ease;
+                @include hover {
+                    opacity: 0.72;
+                }
+
+                span {
+                    color: $pure-white;
+                    font-size: fz(15);
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                }
+            }
+        }
+        .statusLink {
+            background-color: #71645e;
+            padding-left: 2em;
+            &::after {
+                content: "";
+                position: absolute;
+                top: 50%;
+                right: 1.2rem;
+                width: 5.4rem;
+                translate: 0 -50%;
+                @include svg-arrow-link("fff");
+            }
+        }
+        .passLink {
+            background-color: $pure-black;
+            justify-content: center;
+            padding-left: 2em;
+            &::before {
+                content: "";
+                position: absolute;
+                bottom: 0;
+                left: 1rem;
+                background: url(/images/dayuse/tegata.webp) no-repeat center
+                    center/contain;
+                aspect-ratio: 313/449;
+                width: 4.5rem;
+            }
+        }
+    }
+}
+
+.uenyu {
+    padding-bottom: 52rem;
+    .bathBody {
+        grid-template-columns: 36vw 1fr;
+        .textBlock {
+            .leadText,
+            .bodyText {
+                padding-left: 4rem;
+                padding-right: 5vw;
+            }
+        }
+    }
+    .sideImages {
+        grid-column: 1;
+        grid-row: 1;
+        img {
+            &:first-child {
+                aspect-ratio: 514 / 770;
+            }
+            &:last-child {
+                aspect-ratio: 413 / 620;
+                width: calc(100% - 7vw);
+                margin-left: auto;
+            }
+        }
+    }
+    .textBlock {
+        grid-column: 2;
+        .linkBlock {
+            margin-top: 11.2rem;
+        }
+    }
+}
+.momijinoyu {
+    .mainVisual {
+        h2 {
+            right: 6.8vw;
+            left: auto;
+        }
+    }
+    .bathBody {
+        grid-template-columns: 1fr 36vw;
+        .textBlock {
+            grid-column: 1;
+            grid-row: 1;
+            .leadText,
+            .bodyText {
+                padding-left: 8.6vw;
+            }
+        }
+    }
+    .sideImages {
+        grid-column: 2;
+        .linkBlock {
+            margin-top: 2.7rem;
+        }
+    }
+}
+
+/*======================================
+泉質
+--------------------------------------*/
+.springQuality {
+    padding: 18rem 2vw 27rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    article {
+        display: flex;
+        flex-direction: column;
+        width: min(100%, 95rem);
+        h2 {
+            font-size: fz(24);
+            font-weight: 700;
+            letter-spacing: 0.1em;
+            color: $main-black;
+        }
+        dl {
+            width: 100%;
+            margin-top: 3.7rem;
+            border: 1px solid #9c948c;
+            border-radius: 1rem;
+            padding-inline: 4rem;
+            display: grid;
+            grid-column: auto 1fr;
+            font-size: inherit;
+            div {
+                display: grid;
+                grid-column: span 2;
+                grid-template-columns: subgrid;
+                font-size: inherit;
+                padding-block: 1.4em;
+                gap: 0 4em;
+                &:not(:last-of-type) {
+                    border-bottom: 1px solid #9c948c;
+                }
+                dt,
+                dd {
+                    font-size: fz(16);
+                    letter-spacing: 0.08em;
+                    line-height: 2;
+                }
+                dt {
+                    color: $main-black;
+                    white-space: nowrap;
+                }
+            }
+        }
+    }
+}

@@ -17,5 +17,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: new URL('/cuisine/', metadataBase).toString(),
       lastModified: new Date(),
     },
+    {
+      url: new URL('/dayuse/', metadataBase).toString(),
+      lastModified: new Date(),
+    },
   ];
 }

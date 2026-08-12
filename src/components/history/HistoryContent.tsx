@@ -3,7 +3,7 @@
  * URL: /src/components/history/HistoryContent.tsx
  * Referenced in: /src/app/history/page.tsx
  * Created: 2026-08-08
- * Last updated: 2026-08-09
+ * Last updated: 2026-08-11
  * ======================================= */
 
 'use client';
@@ -14,12 +14,12 @@ import styles from './HistoryContent.module.scss';
 
 const historyBlocks = [
   {
-    title: [
-      'ふもと旅館が',
-      '守り続けてきたもの。',
-      'ふもと旅館が',
-      '守り続けていきたいもの。',
-    ],
+    title: {
+      src: '/images/history/catch01.svg',
+      width: 362,
+      height: 102,
+      alt: 'ふもと旅館が守り続けてきたもの。',
+    },
     body: [
       '黒川温泉が大切にしてきたものは、自然と寄り添う暮らしと、訪れる人を静かに迎える心。',
       'ふもと旅館もまた、その思いを受け継ぎながら、日々の営みを重ねています。',
@@ -32,7 +32,12 @@ const historyBlocks = [
     },
   },
   {
-    title: ['ふもと旅館を彩る、', '女将の想い。'],
+    title: {
+      src: '/images/history/catch02.svg',
+      width: 324,
+      height: 102,
+      alt: 'ふもと旅館を彩る、女将の想い。',
+    },
     body: [
       '黒川温泉の小さな湯宿として、この土地に根を張りながら歩んできました。',
       '昔ながらの湯のぬくもり、山あいの静けさ、人を迎えるための心配り。その一つひとつを大切にしながら、ふもと旅館らしい時間を育てています。',
@@ -46,7 +51,12 @@ const historyBlocks = [
     },
   },
   {
-    title: ['受け継がれる想い、', 'つながる未来。'],
+    title: {
+      src: '/images/history/catch03.svg',
+      width: 321,
+      height: 101,
+      alt: '受け継がれる想い、つながる未来。',
+    },
     body: [
       '長く受け継がれてきた湯宿の空気を、今の時代に合うかたちで整えていく。',
       'ふもと旅館では、昔からの佇まいや人の温度を大切にしながら、これからの滞在にも心地よく寄り添える宿を目指しています。',
@@ -60,7 +70,12 @@ const historyBlocks = [
     },
   },
   {
-    title: ['受け継がれた想いは、', '湯となる。'],
+    title: {
+      src: '/images/history/catch04.svg',
+      width: 360,
+      height: 102,
+      alt: '受け継がれた想いは、湯となる。',
+    },
     body: [
       'ふもと旅館に流れる源泉のように、これまでの歩みは静かにこれからへ続いていきます。',
       '湯に身をゆだねる時間の中で、この場所が守ってきたものを感じてください。',
@@ -102,8 +117,8 @@ function FootMarks() {
 function TextLines({ lines }: { lines: readonly string[] }) {
   return (
     <>
-      {lines.map((line) => (
-        <span key={line}>{line}</span>
+      {lines.map((line, index) => (
+        <span key={`${line}-${index}`}>{line}</span>
       ))}
     </>
   );
@@ -129,11 +144,19 @@ export default function HistoryContent() {
       </div>
 
       {historyBlocks.map((block, index) => (
-        <article className={styles.historyBlock} key={block.title.join('')}>
+        <article className={styles.historyBlock} key={block.title.alt}>
           {index > 0 && <FootMarks />}
           <div className={styles.textBlock}>
             <h2>
-              <TextLines lines={block.title} />
+              <span className="sr-only">{block.title.alt}</span>
+              <Image
+                src={block.title.src}
+                width={block.title.width}
+                height={block.title.height}
+                alt=""
+                aria-hidden="true"
+                className={styles.catchImage}
+              />
             </h2>
             <p className={styles.bodyText}>
               <TextLines lines={block.body} />

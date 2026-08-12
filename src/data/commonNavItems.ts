@@ -32,7 +32,7 @@ export const commonNavItems: CommonNavItem[] = [
   },
   { href: '/#rooms', label: '客室', svg: 'svgMenuTextRoom', class: 'linkRoom' },
   {
-    href: '/#onsen',
+    href: '/dayuse/',
     label: '日帰り入浴',
     svg: 'svgMenuTextHigaeri',
     class: 'linkHigaeri',
