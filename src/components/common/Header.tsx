@@ -77,7 +77,7 @@ export default function Header() {
           className={clsx(styles.boxMenu, isOpen && styles['is-open'])}
         >
           <div className={styles.contactBlock} onClick={onClose}>
-            <ScrollLink href="/#reservation" className={styles.itemLink}>
+            <ScrollLink href="/reservation/" className={styles.itemLink}>
               <span>ご予約はこちら</span>
             </ScrollLink>
 

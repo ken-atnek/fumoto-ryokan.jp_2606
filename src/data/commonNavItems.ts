@@ -7,13 +7,13 @@ export type CommonNavItem = {
 
 export const commonNavItems: CommonNavItem[] = [
   {
-    href: '/#reservation',
+    href: '/reservation/',
     label: '予約',
     svg: 'svgMenuTextReserve',
     class: 'linkReserve',
   },
   {
-    href: '/#access',
+    href: '/access/',
     label: 'アクセス',
     svg: 'svgMenuTextAccess',
     class: 'linkAccess',

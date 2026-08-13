@@ -32,7 +32,7 @@ export default function Footer() {
           </ScrollLink>
 
           <div className={styles.contactBlock}>
-            <ScrollLink href="/#reservation" className={styles.itemLink}>
+            <ScrollLink href="/reservation/" className={styles.itemLink}>
               <span>ご予約はこちら</span>
             </ScrollLink>
 

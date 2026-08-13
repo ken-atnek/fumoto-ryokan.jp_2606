@@ -1,0 +1,238 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 ご予約ページ コンテンツ スタイル
+ * URL: /src/components/reservation/ReservationContent.module.scss
+ * Referenced in: /src/components/reservation/ReservationContent.tsx
+ * Created: 2026-08-13
+ * Last updated: 2026-08-13
+ * ======================================= */
+
+.mainLink,
+.bottomLink {
+    @include item-link;
+    width: min(100%, 90rem);
+    height: 7.5rem;
+    justify-content: center;
+    padding-left: 0;
+    margin-top: 7.6rem;
+    &::after {
+        right: 2.9rem;
+        width: 7.5rem;
+    }
+    span {
+        font-size: fz(20);
+    }
+}
+
+.hero {
+    padding-top: 10rem;
+    padding-bottom: 11rem;
+    display: flex;
+    justify-content: flex-end;
+    h1 {
+        width: min(8rem, 5.6vw);
+        margin-right: 16vw;
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.guideSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    article {
+        display: flex;
+        flex-direction: column;
+        max-width: 90rem;
+        .leadText {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            font-size: inherit;
+            span {
+                font-size: fz(24);
+                font-weight: 700;
+                line-height: 2;
+                letter-spacing: 0.14em;
+            }
+        }
+        .infoBlock {
+            width: 100%;
+            font-size: inherit;
+            display: grid;
+            grid-template-columns: 26rem 1fr;
+            gap: 0 4rem;
+            margin-top: 15.1rem;
+            .contactBlock {
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                .contactLink {
+                    width: 100%;
+                    height: 5rem;
+                    border-radius: 0.5rem;
+                    background: #d8ddd2;
+                    color: $main-gray;
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    font-size: fz(15);
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                    transition: opacity 0.3s ease;
+                    @include hover {
+                        opacity: 0.72;
+                    }
+                    &:last-of-type {
+                        margin-top: 4.4rem;
+                    }
+                }
+                .reception {
+                    font-size: fz(14);
+                    letter-spacing: 0.1em;
+                    line-height: 2em;
+                }
+            }
+            .noteBlock {
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                .notes {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 1.1rem 0;
+                    font-size: inherit;
+                    li {
+                        position: relative;
+                        padding-left: 1em;
+                        font-size: fz(15);
+                        line-height: 2.2;
+                        letter-spacing: 0.08em;
+                        &::before {
+                            content: "・";
+                            position: absolute;
+                            left: 0;
+                        }
+                        &.cancelFee {
+                            padding-left: 1.6em;
+                            &::before {
+                                content: "■";
+                            }
+                        }
+                    }
+                }
+            }
+            .extraNote {
+                margin-top: 1.4rem;
+                font-size: fz(15);
+                line-height: 2.2;
+                letter-spacing: 0.1em;
+            }
+        }
+    }
+}
+
+.benefitSection {
+    width: 100%;
+    margin-inline: auto;
+    padding-inline: 2vw;
+    padding-bottom: 42rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 24rem;
+    article {
+        display: grid;
+        grid-template-columns: auto 1fr;
+        gap: 0 11rem;
+        max-width: 90rem;
+        .benefitTitle {
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: flex-start;
+            gap: 0 1.4rem;
+            font-size: inherit;
+            span {
+                writing-mode: vertical-rl;
+                font-size: fz(26);
+                font-weight: 700;
+                line-height: 1.2;
+                letter-spacing: 0.3em;
+            }
+        }
+        .benefitList {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            font-size: inherit;
+            gap: 8.2rem 0;
+            counter-reset: number;
+            .benefitItem {
+                position: relative;
+                display: flex;
+                flex-direction: column;
+                font-size: inherit;
+                h2 {
+                    position: relative;
+                    font-size: fz(22);
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    &::before {
+                        content: counter(number);
+                        counter-increment: number;
+                        position: absolute;
+                        width: 3rem;
+                        font-size: 0.9em;
+                        line-height: 1;
+                        aspect-ratio: 1;
+                        border-radius: 50%;
+                        display: grid;
+                        place-items: center;
+                        top: 50%;
+                        translate: 0 -50%;
+                        right: calc(100% + 0.5em);
+                        background-color: #ff0000;
+                        color: #fff;
+                        padding-left: 0.1em;
+                        padding-bottom: 0.2em;
+                    }
+                }
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 3rem;
+                    font-size: inherit;
+                    span {
+                        font-size: fz(15);
+                        font-weight: 500;
+                        line-height: 1.8;
+                        letter-spacing: 0.08em;
+                        min-height: 1lh;
+                    }
+                }
+            }
+        }
+        .bottomLink {
+            grid-column: span 2;
+            margin-top: 15rem;
+        }
+    }
+}
+
+.benefitNumber {
+    width: 3rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: #f00;
+    color: $pure-white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: fz(16);
+    font-weight: 700;
+    line-height: 1;
+}

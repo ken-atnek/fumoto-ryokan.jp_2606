@@ -1,0 +1,224 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 アクセスページ コンテンツ スタイル
+ * URL: /src/components/access/AccessContent.module.scss
+ * Referenced in: /src/components/access/AccessContent.tsx
+ * Created: 2026-08-13
+ * Last updated: 2026-08-13
+ * ======================================= */
+
+.accessContent {
+    padding-top: 10rem;
+    padding-bottom: 25rem;
+}
+
+.hero {
+    position: relative;
+    font-size: inherit;
+    h1 {
+        width: min(7.4rem, 5.2vw);
+        margin: 0 18.6vw 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .addressLink {
+        position: absolute;
+        top: 16.2rem;
+        left: 50%;
+        translate: -50%;
+        display: inline-flex;
+        align-items: center;
+        border: 1px solid #3c3232;
+        border-radius: 0.5rem;
+        font-size: inherit;
+        letter-spacing: 0.08em;
+        padding: 1rem 3em;
+        span {
+            position: relative;
+            font-size: fz(20);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            padding-left: 1.6em;
+            &::before {
+                content: "";
+                position: absolute;
+                left: 0;
+                top: 50%;
+                translate: 0 -50%;
+                width: 1.2em;
+                background: url(/images/access/map.webp) no-repeat center
+                    center/contain;
+                aspect-ratio: 27/33;
+            }
+        }
+    }
+}
+
+.sectionInner {
+    width: min(100%, 103rem);
+    display: flex;
+    gap: 0 8vw;
+    margin-top: 9.3rem;
+    font-size: inherit;
+    h2 {
+        writing-mode: vertical-rl; //縦書き
+        text-orientation: upright; //縦書き英数回転
+        font-feature-settings: initial; //左詰め解除
+        font-size: fz(20);
+        font-weight: 700;
+        line-height: 1.6;
+        letter-spacing: 0.42em;
+    }
+}
+
+.routeGroup {
+    display: flex;
+    flex-direction: column;
+    gap: 5.8rem 0;
+    font-size: inherit;
+    .routeBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        font-size: inherit;
+        h3 {
+            font-size: fz(24);
+            font-weight: 700;
+            letter-spacing: 0.21em;
+            line-height: 1.2;
+        }
+        .routeRows {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem 0;
+            font-size: inherit;
+            .routeSteps {
+                li {
+                    &:first-of-type {
+                        &::before {
+                            content: "→";
+                            color: $main-black;
+                            font-size: 1em;
+                            line-height: 1;
+                            padding-right: 2rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+.routeSteps {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 1.4rem 2rem;
+    margin-top: 1.8rem;
+    font-size: inherit;
+    li {
+        position: relative;
+        min-height: 3.2rem;
+        display: flex;
+        align-items: center;
+        font-size: fz(16);
+        font-weight: 500;
+        letter-spacing: 0.08em;
+        line-height: 1em;
+        &:not(:last-child)::after {
+            content: "→";
+            color: $main-black;
+            font-size: 1em;
+            line-height: 1;
+            padding-left: 2rem;
+        }
+        span {
+            border: 1px solid $main-gray;
+            border-radius: 0.5rem;
+            padding: 0.8rem 1.6rem;
+        }
+    }
+}
+
+.trainSection {
+    padding-bottom: 9rem;
+    padding-inline: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.illustrationBand {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 1440/248;
+    &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background: url(/images/top/top-header-bg.svg) no-repeat center center /
+            contain;
+        aspect-ratio: 1440/248;
+        z-index: -1;
+    }
+    .trainImage {
+        position: absolute;
+        bottom: 100%;
+        left: 60.4vw;
+        width: 11vw;
+        aspect-ratio: 16/2;
+    }
+    .busImage {
+        position: absolute;
+        bottom: 100%;
+        left: 78.5vw;
+        width: 3.6vw;
+    }
+    .carImage {
+        position: absolute;
+        top: 7vw;
+        left: 28vw;
+        width: 3.6vw;
+        rotate: -10deg;
+    }
+}
+
+.carSection {
+    padding-inline: 2vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 17rem;
+}
+
+.evNotice {
+    width: min(100%, 88rem);
+    margin-inline: auto;
+    border: 1px solid #9c948c;
+    border-radius: 1rem;
+    padding: 5rem 7rem 5.8rem;
+    color: $main-black;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    h2 {
+        text-align: center;
+        font-size: fz(20);
+        font-weight: 700;
+        letter-spacing: 0.16em;
+        line-height: 1.8;
+    }
+    p {
+        margin-top: 4.2rem;
+        font-size: fz(15);
+        line-height: 2.2;
+        letter-spacing: 0.1em;
+        text-align: justify;
+    }
+}
