@@ -19,7 +19,7 @@ export const commonNavItems: CommonNavItem[] = [
     class: 'linkAccess',
   },
   {
-    href: '/#stay-plan',
+    href: '/stay/',
     label: '過ごし方',
     svg: 'svgMenuTextSpend',
     class: 'linkSpend',

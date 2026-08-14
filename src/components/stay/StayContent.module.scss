@@ -1,0 +1,757 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 過ごし方ページ コンテンツ スタイル
+ * URL: /src/components/stay/StayContent.module.scss
+ * Referenced in: /src/components/stay/StayContent.tsx
+ * Created: 2026-08-14
+ * Last updated: 2026-08-14
+ * ======================================= */
+
+.stayContent {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding-top: 10rem;
+    padding-bottom: 10.1rem;
+    font-size: inherit;
+}
+.innerBlock {
+    display: flex;
+    flex-direction: column;
+    max-width: 1082px;
+    &::before,
+    &::after {
+        clip-path: inset(0 0 100% 0);
+        transition: 0.6s ease-out;
+    }
+    &.isActive {
+        &::before,
+        &::after {
+            clip-path: inset(0);
+        }
+    }
+}
+.timeBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem 0;
+    font-size: inherit;
+    img {
+        display: block;
+        width: 4.8rem;
+        height: auto;
+    }
+    span {
+        display: inline-block;
+        font-size: fz(24);
+        font-weight: 700;
+        letter-spacing: 0.1em;
+    }
+}
+.textBlock {
+    position: relative;
+    font-size: inherit;
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 4rem;
+    h2 {
+        font-size: fz(26);
+        font-weight: 700;
+        letter-spacing: 0.2em;
+        line-height: 1.7;
+    }
+    p {
+        display: flex;
+        flex-direction: column;
+        margin-top: 3rem;
+        font-size: inherit;
+        span {
+            font-size: fz(16);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            line-height: 2;
+        }
+    }
+}
+/* =================================
+ * タイトル
+ * ------------------------------ */
+.pageTitleBlock {
+    width: min(7.7rem, 5.4vw);
+    margin: 0 16vw 0 auto;
+    .pageTitle {
+        font-size: inherit;
+        .titleImage {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+
+.wideImage,
+.cardImage,
+.checkInImages img,
+.restImages img {
+    display: block;
+    border-radius: 1rem;
+    object-fit: cover;
+}
+
+.choiceLabels {
+    position: absolute;
+    top: -3rem;
+    left: 50%;
+    z-index: 3;
+    display: flex;
+    gap: 0 2.4rem;
+    translate: -50%;
+    font-size: inherit;
+    span {
+        display: flex;
+        align-items: center;
+        min-height: 10rem;
+        padding: 0.8em 0.31em;
+        color: $pure-white;
+        background-color: #231815;
+        font-size: fz(16);
+        font-weight: 700;
+        letter-spacing: 0.5em;
+        writing-mode: vertical-rl;
+    }
+}
+
+.card {
+    .timeBlock {
+        align-items: flex-start;
+        margin-top: 2.4rem;
+        text-align: left;
+        margin-left: 0.5em;
+    }
+}
+
+.placeholder {
+    width: 100%;
+    aspect-ratio: 500 / 340;
+    border-radius: 0.5rem;
+    background-color: #d8d8d8;
+}
+
+/* =================================
+ * チェックイン
+ * ------------------------------ */
+.checkInBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 10rem 15rem;
+    margin-top: 57px;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(204 192 180 / 30%);
+        clip-path: polygon(
+            0 0,
+            25.38% 1.97%,
+            51.11% 0.92%,
+            75.56% 5.51%,
+            100% 1.97%,
+            100% 98.29%,
+            71.77% 100%,
+            45.97% 96.19%,
+            0 95.28%
+        );
+    }
+    .innerBlock {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -10rem;
+            right: 20%;
+            width: 11rem;
+            background: url("/images/stay/locus01.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 162/403;
+            rotate: 6deg;
+        }
+        .checkInImages {
+            position: relative;
+            display: flex;
+            width: 100%;
+            gap: 0 1.4rem;
+            img {
+                aspect-ratio: 700 / 354;
+                width: 64%;
+                &:last-child {
+                    width: 24%;
+                    align-self: end;
+                    aspect-ratio: 258 / 172;
+                }
+            }
+        }
+        .timeBlock {
+            position: absolute;
+            top: 0;
+            right: 0;
+            span {
+                translate: 0.5em;
+            }
+        }
+    }
+}
+/* =================================
+ * 浴衣
+ * ------------------------------ */
+.yukataBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 13rem 16rem;
+    .innerBlock {
+        &::before {
+            content: "";
+            position: absolute;
+            top: -25rem;
+            right: 73%;
+            width: 11rem;
+            background: url("/images/stay/locus01.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 162/403;
+            rotate: 6deg;
+            scale: -1 1;
+        }
+        .yukataBody {
+            position: relative;
+            font-size: inherit;
+            width: min(70rem, 64%);
+            align-self: flex-end;
+            &::before {
+                content: "";
+                position: absolute;
+                top: 20%;
+                right: calc(100% + 4em);
+                width: 30%;
+                background: url("/images/stay/yukata.webp") no-repeat center
+                    center/contain;
+                aspect-ratio: 330/321;
+                rotate: -3deg;
+            }
+            .wideImage {
+                aspect-ratio: 700/354;
+            }
+        }
+    }
+}
+/* =================================
+ * 湯巡り・散策
+ * ------------------------------ */
+.branchBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 9.4rem 18.5rem;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(204 192 180 / 30%);
+        clip-path: polygon(
+            50.97% 0.72%,
+            100% 8.66%,
+            100% 100%,
+            71.77% 97.94%,
+            45.97% 94.95%,
+            0 94.23%,
+            -0.14% 0,
+            25.24% 1.55%
+        );
+    }
+    .innerBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 7.5%;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -24rem;
+            right: 63%;
+            width: 24rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+        }
+        &::after {
+            top: -21rem;
+            left: 73%;
+            width: 11rem;
+            background: url("/images/stay/locus01.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 162/403;
+            rotate: -6deg;
+            scale: -1 1;
+            transition-delay: 0.4s;
+        }
+        .choiceLabels {
+            top: -16rem;
+        }
+        .card {
+            position: relative;
+            font-size: inherit;
+            &:last-of-type {
+                margin-top: 14rem;
+            }
+            .cardImage {
+                aspect-ratio: 500/354;
+            }
+            .timeBlock {
+                span {
+                    translate: -0.5em;
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * 夕食
+ * ------------------------------ */
+.dinnerBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 14rem 20rem;
+    .innerBlock {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -44rem;
+            left: 33%;
+            width: 16rem;
+            background: url("/images/stay/locus03.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 223/588;
+        }
+        &::after {
+            top: -23rem;
+            right: 31%;
+            width: 24rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+            transition-delay: 0.4s;
+        }
+        .centerInner {
+            position: relative;
+            font-size: inherit;
+            width: min(70rem, 100%);
+            justify-self: center;
+        }
+        .timeBlock {
+            & > span {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2em 0;
+            }
+            small {
+                font-size: inherit;
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 1em;
+                span {
+                    font-size: 1.4rem;
+                    writing-mode: vertical-rl; // 縦書き
+                    text-orientation: upright; // 縦書き英数回転
+                    font-feature-settings: initial; // 左詰め解除
+                    font-weight: 400;
+                    letter-spacing: 0.5em;
+                }
+                .combineText {
+                    display: inline-block;
+                    font: inherit;
+                    letter-spacing: 0;
+                    text-combine-upright: all;
+                    margin-bottom: 0.3em;
+                    margin-top: 1.5em;
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * 夕食後
+ * ------------------------------ */
+.nightBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 13.4rem 26.5rem;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(204 192 180 / 30%);
+        clip-path: polygon(
+            50.97% 0.72%,
+            100% 8.66%,
+            100% 100%,
+            71.77% 97.94%,
+            45.97% 94.95%,
+            0 94.23%,
+            -0.14% 0,
+            25.24% 1.55%
+        );
+    }
+    .innerBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 7.5%;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -28rem;
+            right: 55%;
+            width: 24rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+        }
+        &::after {
+            top: -26rem;
+            left: 60%;
+            width: 12rem;
+            background: url("/images/stay/locus04.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 179/501;
+            transition-delay: 0.4s;
+        }
+        .choiceLabels {
+            top: -16rem;
+        }
+        .card {
+            position: relative;
+            font-size: inherit;
+            &:last-of-type {
+                display: flex;
+                flex-direction: column;
+                .timeBlock {
+                    order: -1;
+                    align-self: flex-end;
+                }
+            }
+            .cardImage {
+                aspect-ratio: 505/354;
+            }
+            .timeBlock {
+                span {
+                    translate: -0.5em;
+                }
+            }
+        }
+    }
+}
+
+/* =================================
+ * 就寝
+ * ------------------------------ */
+.restBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 13.4rem 25rem;
+    .innerBlock {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -47rem;
+            left: 35%;
+            width: 16rem;
+            background: url("/images/stay/locus03.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 223/588;
+        }
+        &::after {
+            top: -39rem;
+            right: 26%;
+            width: 27rem;
+            background: url("/images/stay/locus05.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 387/425;
+            transition-delay: 0.4s;
+        }
+        .textBlock {
+            width: min(100%, 70.5rem);
+        }
+        .restImages {
+            position: relative;
+            z-index: 2;
+            width: min(100%, 70.5rem);
+            font-size: inherit;
+            > img {
+                aspect-ratio: 705 / 354;
+            }
+            .restSub {
+                position: absolute;
+                left: calc(100% - 1rem);
+                bottom: -4rem;
+                width: 22rem;
+                font-size: inherit;
+                display: flex;
+                flex-direction: column;
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 3.7rem;
+                    font-size: inherit;
+                    align-self: flex-end;
+                    span {
+                        color: $main-gray;
+                        font-size: fz(14);
+                        font-weight: 500;
+                        letter-spacing: 0.12em;
+                        line-height: 1.8;
+                    }
+                }
+                img {
+                    aspect-ratio: 219 / 112;
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * 朝食
+ * ------------------------------ */
+.morningBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 12rem 22rem;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(204 192 180 / 30%);
+        clip-path: polygon(
+            50.97% 0.72%,
+            100% 8.66%,
+            100% 100%,
+            71.77% 97.94%,
+            45.97% 94.95%,
+            0 94.23%,
+            -0.14% 0,
+            25.24% 1.55%
+        );
+    }
+    .innerBlock {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0 7.5%;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -30rem;
+            right: 60%;
+            width: 24rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+        }
+        &::after {
+            top: -30rem;
+            left: 60%;
+            width: 15rem;
+            background: url("/images/stay/locus03.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 223/588;
+            scale: -1 1;
+            rotate: -40deg;
+            transition-delay: 0.4s;
+        }
+        .choiceLabels {
+            top: -20rem;
+        }
+        .card {
+            position: relative;
+            font-size: inherit;
+            &:last-of-type {
+                display: flex;
+                flex-direction: column;
+                .timeBlock {
+                    order: -1;
+                    align-self: flex-end;
+                }
+            }
+            .cardImage {
+                aspect-ratio: 505/354;
+            }
+        }
+    }
+}
+/* =================================
+ * 朝食
+ * ------------------------------ */
+.breakfastBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 14rem 20rem;
+    .innerBlock {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+        &::before,
+        &::after {
+            content: "";
+            position: absolute;
+        }
+        &::before {
+            top: -44rem;
+            left: 33%;
+            width: 16rem;
+            background: url("/images/stay/locus03.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 223/588;
+        }
+        &::after {
+            top: -36rem;
+            right: 31%;
+            width: 25rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+            rotate: -15deg;
+            transition-delay: 0.4s;
+        }
+        .centerInner {
+            position: relative;
+            font-size: inherit;
+            width: min(70rem, 100%);
+            justify-self: center;
+        }
+        .timeBlock {
+            padding-top: 4.4rem;
+            & > span {
+                display: flex;
+                flex-direction: column;
+                gap: 0.2em 0;
+            }
+            small {
+                font-size: inherit;
+                display: flex;
+                flex-direction: row-reverse;
+                margin-top: 1em;
+                span {
+                    font-size: 1.4rem;
+                    writing-mode: vertical-rl; // 縦書き
+                    text-orientation: upright; // 縦書き英数回転
+                    font-feature-settings: initial; // 左詰め解除
+                    font-weight: 400;
+                    letter-spacing: 0.5em;
+                }
+                .combineText {
+                    display: inline-block;
+                    font: inherit;
+                    letter-spacing: 0;
+                    text-combine-upright: all;
+                    margin-bottom: 0.3em;
+                    margin-top: 1.5em;
+                }
+            }
+        }
+    }
+}
+/* =================================
+ * チェックアウト
+ * ------------------------------ */
+.checkoutBlock {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-inline: 2vw;
+    padding-block: 13rem 15.6rem;
+    &::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-color: rgb(204 192 180 / 30%);
+        clip-path: polygon(
+            50.97% 0.72%,
+            100% 8.66%,
+            100% 100%,
+            71.77% 97.94%,
+            45.97% 94.95%,
+            0 94.23%,
+            -0.14% 0,
+            25.24% 1.55%
+        );
+    }
+    .innerBlock {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        &::before {
+            content: "";
+            position: absolute;
+            top: -31rem;
+            left: 25%;
+            width: 24rem;
+            background: url("/images/stay/locus02.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 341/301;
+            scale: -1 1;
+            rotate: 8deg;
+        }
+        .timeBlock {
+            margin-top: 1rem;
+        }
+        .checkoutInner {
+            position: relative;
+            width: min(70rem, 64%);
+            font-size: inherit;
+            .wideImage {
+                aspect-ratio: 700/354;
+            }
+        }
+    }
+}
