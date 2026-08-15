@@ -58,7 +58,9 @@ export default function TopNews() {
       <article>
         <div className={styles.boxList}>
           {isError ? (
-            <p className={styles.itemError}>お知らせの読み込みに失敗しました。</p>
+            <p className={styles.itemError}>
+              お知らせの読み込みに失敗しました。
+            </p>
           ) : null}
           {items.map((item, index) => (
             <ScrollLink
@@ -73,9 +75,9 @@ export default function TopNews() {
             </ScrollLink>
           ))}
         </div>
-        <ScrollLink href="/news/" className={styles.itemLink}>
+        {/* <ScrollLink href="/news/" className={styles.itemLink}>
           <span>お知らせ一覧</span>
-        </ScrollLink>
+        </ScrollLink> */}
       </article>
     </section>
   );
