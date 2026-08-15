@@ -30,7 +30,7 @@ export const commonNavItems: CommonNavItem[] = [
     svg: 'svgMenuTextFood',
     class: 'linkFood',
   },
-  { href: '/#rooms', label: '客室', svg: 'svgMenuTextRoom', class: 'linkRoom' },
+  { href: '/rooms/', label: '客室', svg: 'svgMenuTextRoom', class: 'linkRoom' },
   {
     href: '/dayuse/',
     label: '日帰り入浴',

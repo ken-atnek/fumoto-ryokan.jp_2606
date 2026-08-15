@@ -18,6 +18,10 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: new Date(),
     },
     {
+      url: new URL('/rooms/', metadataBase).toString(),
+      lastModified: new Date(),
+    },
+    {
       url: new URL('/stay/', metadataBase).toString(),
       lastModified: new Date(),
     },

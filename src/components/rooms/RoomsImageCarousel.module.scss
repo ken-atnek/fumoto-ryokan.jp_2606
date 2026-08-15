@@ -1,0 +1,68 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 お部屋ページ 画像スライド スタイル
+ * URL: /src/components/rooms/RoomsImageCarousel.module.scss
+ * Referenced in: /src/components/rooms/RoomsImageCarousel.tsx
+ * Created: 2026-08-15
+ * Last updated: 2026-08-15
+ * ======================================= */
+
+.carousel {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* stylelint-disable selector-pseudo-class-no-unknown, selector-class-pattern */
+    :global(.splide) {
+        width: 100%;
+    }
+    :global(.splide__track) {
+        overflow: visible;
+    }
+    :global(.splide__pagination) {
+        position: relative;
+        // justify-content: flex-start;
+        gap: 0 1.2rem;
+        margin-top: 1.6rem;
+        padding-left: 1rem;
+    }
+    :global(.splide__pagination__page) {
+        width: 0.8rem;
+        height: 0.8rem;
+        margin: 0;
+        border: 1px solid #999;
+        background-color: transparent;
+        opacity: 1;
+        transform: none;
+    }
+    :global(.splide__pagination__page.is-active) {
+        border-color: $pure-black;
+        background-color: $pure-black;
+        transform: scale(1.3);
+    }
+    /* stylelint-enable selector-pseudo-class-no-unknown, selector-class-pattern */
+}
+
+.slideItem {
+    width: 61vw;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 88 / 56;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+}
+
+.staticImage {
+    width: 100%;
+    img {
+        display: block;
+        width: 100%;
+        height: auto;
+        aspect-ratio: 88 / 56;
+        object-fit: cover;
+        border-radius: 1rem;
+    }
+}

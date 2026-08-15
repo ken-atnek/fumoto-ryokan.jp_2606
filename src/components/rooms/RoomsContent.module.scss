@@ -1,0 +1,166 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 お部屋ページ コンテンツ スタイル
+ * URL: /src/components/rooms/RoomsContent.module.scss
+ * Referenced in: /src/components/rooms/RoomsContent.tsx
+ * Created: 2026-08-15
+ * Last updated: 2026-08-15
+ * ======================================= */
+
+.hero {
+    padding-top: 10rem;
+    display: flex;
+    justify-content: center;
+    h1 {
+        width: min(7.8rem, 5.5vw);
+        margin: 0 16vw 0 auto;
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+}
+.roomSection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12.6rem 0;
+    &.honkan {
+        margin-inline: auto;
+        margin-top: 15rem;
+        padding-bottom: 24rem;
+        &::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            translate: -50%;
+            width: min(100%, 96rem);
+            background-color: #71645e;
+            height: 1px;
+        }
+    }
+    &.bekkan {
+        padding-top: 15rem;
+        padding-bottom: 26.1rem;
+        .sectionLead {
+            h2 {
+                width: 4.6rem;
+            }
+        }
+    }
+    .sectionLead {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 12.6rem 0;
+        font-size: inherit;
+        width: min(60rem, 100%);
+        h2 {
+            width: 5rem;
+            img {
+                display: block;
+                width: 100%;
+                height: auto;
+            }
+        }
+        .leadText {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem 0;
+            font-size: inherit;
+            p {
+                font-size: fz(16);
+                font-weight: 500;
+                line-height: 2.4;
+                letter-spacing: 0.12em;
+                text-align: justify;
+                display: flex;
+                flex-direction: column;
+                &:first-child {
+                    text-align: center;
+                    font-size: fz(20);
+                    font-weight: 700;
+                    letter-spacing: 0.2em;
+                    line-height: 3;
+                }
+                span {
+                    line-height: 2.8;
+                }
+            }
+        }
+    }
+    .roomList {
+        display: flex;
+        flex-direction: column;
+        gap: 10rem 0;
+        width: 100%;
+        font-size: inherit;
+        .roomItem {
+            display: flex;
+            justify-content: space-between;
+            gap: 0 6.6vw;
+            align-items: center;
+            padding-left: 7vw;
+            &.reverse {
+                padding-left: unset;
+                flex-direction: row-reverse;
+            }
+            .roomText {
+                font-size: inherit;
+                flex: 1;
+                .roomNumber {
+                    color: $pure-black;
+                    font-size: fz(14);
+                    letter-spacing: 0.1em;
+                    text-decoration: underline 1px solid $pure-black;
+                }
+                h3 {
+                    margin-top: 4rem;
+                    font-size: fz(30);
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                }
+                .roomName {
+                    margin-top: 1.2rem;
+                    font-size: fz(18);
+                    font-weight: 500;
+                    letter-spacing: 0.1em;
+                }
+                .roomBody {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 0.4rem 0;
+                    margin-top: 3rem;
+                    color: #3c3232;
+                    font-size: fz(15);
+                    font-weight: 500;
+                    text-align: justify;
+                    span {
+                        letter-spacing: 0.1em;
+                        line-height: 2.2;
+                        min-height: 1lh;
+                    }
+                }
+                .roomLink {
+                    @include item-link;
+                    margin-top: 5.6rem;
+                    width: min(100%, 346px);
+                }
+                .roomNote {
+                    margin-top: 1.6rem;
+                    color: $main-gray;
+                    font-size: fz(13);
+                    font-weight: 500;
+                    letter-spacing: 0.08em;
+                }
+            }
+            .roomImage {
+                width: 61vw;
+            }
+        }
+    }
+}
