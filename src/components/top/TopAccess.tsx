@@ -3,7 +3,7 @@
  * URL: /src/components/top/TopAccess.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-07-07
- * Last updated: 2026-07-07
+ * Last updated: 2026-08-15
  * ======================================= */
 
 import Image from 'next/image';
@@ -52,7 +52,7 @@ export default function TopAccess() {
         <div className={styles.boxIllustMap}>
           <span></span>
         </div>
-        <ScrollLink href="/news/" className={styles.itemLink}>
+        <ScrollLink href="/access/" className={styles.itemLink}>
           <span>アクセス</span>
         </ScrollLink>
       </article>

@@ -3,7 +3,7 @@
  * URL: /src/components/top/TopRooms.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-07-02
- * Last updated: 2026-07-02
+ * Last updated: 2026-08-15
  * ======================================= */
 
 import Image from 'next/image';
@@ -77,7 +77,7 @@ export default function TopRooms() {
           <br />
           それぞれ異なる趣の中で、心ほどける時間をお過ごしください。
         </p>
-        <ScrollLink href="/#reservation" className={styles.itemLink}>
+        <ScrollLink href="/rooms/" className={styles.itemLink}>
           <span>客室</span>
         </ScrollLink>
         <div className={styles.boxRightImages}>

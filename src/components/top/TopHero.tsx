@@ -3,7 +3,7 @@
  * URL: /src/components/top/TopHero.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-07-01
- * Last updated: 2026-07-01
+ * Last updated: 2026-08-15
  * ======================================= */
 
 import HeroSlide from './HeroSlide';
@@ -11,7 +11,7 @@ import styles from './TopHero.module.scss';
 
 export default function TopHero() {
   return (
-    <section className={styles.topHero}>
+    <section id="top" className={styles.topHero}>
       <div className={styles.blockSlide}>
         <HeroSlide />
       </div>

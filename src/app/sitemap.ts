@@ -33,5 +33,17 @@ export default function sitemap(): MetadataRoute.Sitemap {
       url: new URL('/dayuse/', metadataBase).toString(),
       lastModified: new Date(),
     },
+    {
+      url: new URL('/access/', metadataBase).toString(),
+      lastModified: new Date(),
+    },
+    {
+      url: new URL('/reservation/', metadataBase).toString(),
+      lastModified: new Date(),
+    },
+    {
+      url: new URL('/history/', metadataBase).toString(),
+      lastModified: new Date(),
+    },
   ];
 }
