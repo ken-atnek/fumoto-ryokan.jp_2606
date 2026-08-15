@@ -5,7 +5,7 @@
  * URL: /src/components/dayuse/DayuseContent.module.scss
  * Referenced in: /src/components/dayuse/DayuseContent.tsx
  * Created: 2026-08-11
- * Last updated: 2026-08-11
+ * Last updated: 2026-08-15
  * ======================================= */
 
 .hero {
@@ -62,9 +62,9 @@
     }
 }
 
-/*======================================
+/* ======================================
 うえん湯・もみじの湯
---------------------------------------*/
+-------------------------------------- */
 .bathSection {
     scroll-margin-top: 8rem;
     position: relative;
@@ -190,7 +190,7 @@
                 position: absolute;
                 bottom: 0;
                 left: 1rem;
-                background: url(/images/dayuse/tegata.webp) no-repeat center
+                background: url("/images/dayuse/tegata.webp") no-repeat center
                     center/contain;
                 aspect-ratio: 313/449;
                 width: 4.5rem;
@@ -254,58 +254,6 @@
         grid-column: 2;
         .linkBlock {
             margin-top: 2.7rem;
-        }
-    }
-}
-
-/*======================================
-泉質
---------------------------------------*/
-.springQuality {
-    padding: 18rem 2vw 27rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    article {
-        display: flex;
-        flex-direction: column;
-        width: min(100%, 95rem);
-        h2 {
-            font-size: fz(24);
-            font-weight: 700;
-            letter-spacing: 0.1em;
-            color: $main-black;
-        }
-        dl {
-            width: 100%;
-            margin-top: 3.7rem;
-            border: 1px solid #9c948c;
-            border-radius: 1rem;
-            padding-inline: 4rem;
-            display: grid;
-            grid-column: auto 1fr;
-            font-size: inherit;
-            div {
-                display: grid;
-                grid-column: span 2;
-                grid-template-columns: subgrid;
-                font-size: inherit;
-                padding-block: 1.4em;
-                gap: 0 4em;
-                &:not(:last-of-type) {
-                    border-bottom: 1px solid #9c948c;
-                }
-                dt,
-                dd {
-                    font-size: fz(16);
-                    letter-spacing: 0.08em;
-                    line-height: 2;
-                }
-                dt {
-                    color: $main-black;
-                    white-space: nowrap;
-                }
-            }
         }
     }
 }

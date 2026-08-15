@@ -1,12 +1,12 @@
 /* =======================================
- * ふもと旅館 日帰り入浴ページ 温質
- * URL: /src/components/dayuse/DayuseSpringQuality.tsx
+ * ふもと旅館 温質 共通コンポーネント
+ * URL: /src/components/common/SpringQuality.tsx
  * Referenced in: /src/app/dayuse/page.tsx
- * Created: 2026-08-11
- * Last updated: 2026-08-12
+ * Created: 2026-08-15
+ * Last updated: 2026-08-15
  * ======================================= */
 
-import styles from './DayuseContent.module.scss';
+import styles from './SpringQuality.module.scss';
 
 const springRows = [
   [
@@ -33,7 +33,7 @@ const springRows = [
   ['分析日', '平成28年12月16日（株式会社同仁グローカル）'],
 ] as const;
 
-export default function DayuseSpringQuality() {
+export default function SpringQuality() {
   return (
     <section className={styles.springQuality}>
       <article>

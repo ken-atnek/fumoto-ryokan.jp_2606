@@ -38,7 +38,7 @@ export const commonNavItems: CommonNavItem[] = [
     class: 'linkHigaeri',
   },
   {
-    href: '/#onsen',
+    href: '/onsen/',
     label: '温泉',
     svg: 'svgMenuTextOnsen',
     class: 'linkOnsen',

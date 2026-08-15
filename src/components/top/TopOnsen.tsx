@@ -3,12 +3,13 @@
  * URL: /src/components/top/TopOnsen.tsx
  * Referenced in: /src/app/page.tsx
  * Created: 2026-07-06
- * Last updated: 2026-07-06
+ * Last updated: 2026-08-15
  * ======================================= */
 
 import styles from './TopOnsen.module.scss';
 import Image from 'next/image';
 import ScrollLink from '@/components/common/ScrollLink';
+import ExternalLink from '@/components/common/ExternalLink';
 import TopOnsenBathGrid from './TopOnsenBathGrid';
 
 const privateBathImages = [
@@ -62,7 +63,7 @@ export default function TopOnsen() {
               <br />
               予約なしで入浴できます。ご利用される際は、入口にある木札を「入浴中」に裏返すだけ。極上のプライベート時間をお過ごしください。
             </p>
-            <ScrollLink href="/news/" className={styles.itemLink}>
+            <ScrollLink href="/onsen/" className={styles.itemLink}>
               <span>貸切り温泉</span>
             </ScrollLink>
           </div>
@@ -87,9 +88,12 @@ export default function TopOnsen() {
               <ScrollLink href="/dayuse/" className={styles.itemLink}>
                 <span>日帰り温泉 大浴場</span>
               </ScrollLink>
-              <ScrollLink href="/news/" className={styles.itemLinkRealtime}>
+              <ExternalLink
+                href="https://www.kurokawaonsen.or.jp/nyuyoku/"
+                className={styles.itemLinkRealtime}
+              >
                 <span>混雑状況を確認</span>
-              </ScrollLink>
+              </ExternalLink>
             </div>
           </div>
         </div>

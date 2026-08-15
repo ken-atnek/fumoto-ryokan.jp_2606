@@ -1,0 +1,391 @@
+@use "../../styles/foundation/" as *;
+
+/* =======================================
+ * ふもと旅館 温泉ページ コンテンツ スタイル
+ * URL: /src/components/onsen/OnsenContent.module.scss
+ * Referenced in: /src/components/onsen/OnsenContent.tsx
+ * Created: 2026-08-15
+ * Last updated: 2026-08-15
+ * ======================================= */
+
+.hero {
+    position: relative;
+    padding-top: 20rem;
+    padding-bottom: 28rem;
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    h1 {
+        position: relative;
+        width: min(8rem, 5.8vw);
+        margin: 0 16vw 0 auto;
+        &::before {
+            content: "";
+            position: absolute;
+            top: calc(100% + 5rem);
+            left: 0;
+            width: 100%;
+            background: url("/images/top/illust-noren.webp") no-repeat center
+                center/contain;
+            aspect-ratio: 143/136;
+            scale: -1 1;
+        }
+        img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+    }
+    .localNav {
+        position: absolute;
+        top: 24rem;
+        left: 50%;
+        display: flex;
+        gap: 0 6rem;
+        translate: -50%;
+        font-size: inherit;
+        a {
+            display: block;
+            transition: 0.3s ease;
+            border-radius: 5px;
+            padding: 2em 1em;
+            border: 1px solid transparent;
+            @include hover {
+                border-color: #71645e;
+            }
+            img {
+                display: block;
+                width: auto;
+            }
+        }
+    }
+}
+.privateBathSection,
+.dayuseBathSection {
+    scroll-margin-top: 8rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.dayuseHeader,
+.privateHeader {
+    gap: 0 12rem;
+    display: flex;
+    justify-content: space-between;
+    width: min(100%, 1063px);
+    font-size: inherit;
+    h2 {
+        img {
+            display: block;
+            width: 5.1rem;
+            height: auto;
+        }
+    }
+    .dayuseLead,
+    .privateLead {
+        padding-top: 3.3rem;
+        display: flex;
+        flex-direction: column;
+        font-size: inherit;
+        gap: 3rem 0;
+        p {
+            color: $main-gray;
+            font-size: fz(16);
+            font-weight: 500;
+            letter-spacing: 0.12em;
+            line-height: 2.8;
+            text-align: justify;
+            max-width: 52em;
+            &:first-child {
+                color: $main-black;
+                font-size: fz(20);
+                font-weight: 700;
+                letter-spacing: 0.2em;
+                line-height: 3;
+            }
+        }
+    }
+}
+/* ======================================
+貸切り温泉
+-------------------------------------- */
+.privateBathSection {
+    display: flex;
+    flex-direction: column;
+    .privateBathLayout {
+        display: grid;
+        grid-template-columns: 57rem minmax(0, 1fr);
+        gap: 0 4vw;
+        align-items: start;
+        margin-top: 22rem;
+        font-size: inherit;
+        .privateBathNav {
+            position: relative;
+            padding-top: 3rem;
+            padding-left: 2vw;
+            font-size: inherit;
+            align-self: start;
+            min-height: 100%;
+            .privateBathNavInner {
+                width: 100%;
+                display: grid;
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+                gap: 6rem 2.6rem;
+                &.is-fixed {
+                    position: fixed;
+                    top: 3rem;
+                    left: 2vw;
+                    width: calc(57rem - 2vw);
+                    z-index: 2;
+                }
+                &.is-bottom {
+                    position: absolute;
+                    left: 2vw;
+                    bottom: 0;
+                    width: calc(100% - 2vw);
+                }
+            }
+            a {
+                position: relative;
+                display: grid;
+                grid-template-columns: 12.6rem minmax(0, 1fr);
+                gap: 0 1.2rem;
+                align-items: center;
+                font-size: inherit;
+                transition: opacity 0.3s ease;
+                @include hover {
+                    opacity: 0.72;
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    aspect-ratio: 126 / 84;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                }
+                .textBox {
+                    position: relative;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: inherit;
+                    justify-content: space-between;
+                    align-self: stretch;
+                    .roomType {
+                        color: $pure-black;
+                        font-size: fz(12);
+                        font-weight: 500;
+                    }
+                    .roomName {
+                        color: $pure-black;
+                        font-size: fz(14);
+                        font-weight: 700;
+                        letter-spacing: 0.08em;
+                        line-height: 1;
+                        margin-top: 6px;
+                        flex: 1;
+                    }
+                    .button {
+                        position: relative;
+                        width: 5.3rem;
+                        height: 3rem;
+                        border: 1px solid #d8d3cd;
+                        border-radius: 100vmax;
+                        background-color: $pure-white;
+                        align-self: flex-end;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            inset: 0;
+                            margin: auto;
+                            width: 50%;
+                            @include svg-arrow-onsen("71645E");
+                        }
+                    }
+                }
+            }
+        }
+        .privateBathList {
+            display: flex;
+            flex-direction: column;
+            gap: 14rem 0;
+            font-size: inherit;
+            .privateBathItem {
+                scroll-margin-top: 16rem;
+                font-size: inherit;
+                .bathImage {
+                    position: relative;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: 815 / 543;
+                        object-fit: cover;
+                        border-radius: 1rem;
+                    }
+                    h3 {
+                        position: absolute;
+                        top: -2rem;
+                        right: 4%;
+                        img {
+                            aspect-ratio: auto;
+                            border-radius: 0;
+                        }
+                    }
+                }
+                p {
+                    display: flex;
+                    flex-direction: column;
+                    margin-top: 2.4rem;
+                    font-size: fz(16);
+                    font-weight: 500;
+                    padding-right: 4rem;
+                    color: #3c3232;
+                    span {
+                        letter-spacing: 0.1em;
+                        text-align: justify;
+                        line-height: 2.8;
+                    }
+                }
+            }
+        }
+    }
+}
+
+/* ======================================
+日帰り温泉
+-------------------------------------- */
+.dayuseBathSection {
+    display: flex;
+    flex-direction: column;
+    margin-top: 30rem;
+    padding-bottom: 20rem;
+
+    .dayuseBathList {
+        width: 100%;
+        padding-inline: 2vw;
+        margin-top: 9rem;
+        display: flex;
+        flex-direction: column;
+        gap: 22rem 0;
+        font-size: inherit;
+        .dayuseBathItem {
+            display: flex;
+            flex-direction: column;
+            gap: 10rem 0;
+            font-size: inherit;
+            .dayuseImageBlock {
+                position: relative;
+                img {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                    aspect-ratio: 1360 / 719;
+                    object-fit: cover;
+                    border-radius: 1rem;
+                }
+                h3 {
+                    position: absolute;
+                    top: 95%;
+                    left: 5%;
+                    width: 8rem;
+                    img {
+                        display: block;
+                        width: 100%;
+                        height: auto;
+                        aspect-ratio: auto;
+                        object-fit: contain;
+                        border-radius: 0;
+                    }
+                }
+            }
+            .dayuseBody {
+                position: relative;
+                display: flex;
+                justify-content: space-between;
+                gap: 0 7rem;
+                font-size: inherit;
+                width: min(80vw, 100%);
+                align-self: flex-end;
+                .dayuseText {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3rem 0;
+                    font-size: inherit;
+                    p {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 0.4rem 0;
+                        font-size: fz(15);
+                        text-align: justify;
+                        span {
+                            font-weight: 500;
+                            letter-spacing: 0.1em;
+                            line-height: 2.2;
+                        }
+                        &.dayuseCatch {
+                            display: block;
+                            font-size: fz(20);
+                            font-weight: 700;
+                            letter-spacing: 0.16em;
+                            line-height: 2;
+                        }
+                    }
+                }
+                .dayuseLinkBlock {
+                    display: flex;
+                    flex-direction: column;
+                    gap: 3.6rem 0;
+                    font-size: inherit;
+                    align-self: flex-end;
+                    a {
+                        position: relative;
+                        display: flex;
+                        align-items: center;
+                        min-height: 5rem;
+                        border-radius: 0.5rem;
+                        transition: opacity 0.3s ease;
+                        width: 26rem;
+                        font-size: inherit;
+                        @include hover {
+                            opacity: 0.72;
+                        }
+                        span {
+                            color: $pure-white;
+                            font-size: fz(15);
+                            font-weight: 500;
+                            letter-spacing: 0.1em;
+                        }
+                    }
+                    .statusLink {
+                        background-color: #71645e;
+                        padding-left: 2em;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            top: 50%;
+                            right: 1.2rem;
+                            width: 5.4rem;
+                            translate: 0 -50%;
+                            @include svg-arrow-link("fff");
+                        }
+                    }
+                    .passLink {
+                        background-color: $pure-black;
+                        justify-content: center;
+                        padding-left: 2em;
+                        &::before {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 1rem;
+                            background: url("/images/dayuse/tegata.webp")
+                                no-repeat center center/contain;
+                            aspect-ratio: 313/449;
+                            width: 4.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

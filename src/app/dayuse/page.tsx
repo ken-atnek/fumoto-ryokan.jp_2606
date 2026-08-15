@@ -3,13 +3,13 @@
  * URL: /src/app/dayuse/page.tsx
  * Referenced in: /src/app/dayuse/page.tsx
  * Created: 2026-08-11
- * Last updated: 2026-08-11
+ * Last updated: 2026-08-15
  * ======================================= */
 
 import type { Metadata } from 'next';
+import SpringQuality from '@/components/common/SpringQuality';
 import DayuseContent from '@/components/dayuse/DayuseContent';
 import DayuseHero from '@/components/dayuse/DayuseHero';
-import DayuseSpringQuality from '@/components/dayuse/DayuseSpringQuality';
 import styles from '@/components/dayuse/DayuseContent.module.scss';
 
 export const metadata: Metadata = {
@@ -23,7 +23,7 @@ export default function DayusePage() {
     <main className={styles.dayusePage}>
       <DayuseHero />
       <DayuseContent />
-      <DayuseSpringQuality />
+      <SpringQuality />
     </main>
   );
 }
