@@ -57,6 +57,8 @@
 14. `docs/rules/lessons.md`
 15. `docs/review/CLAUDE_REVIEW_REQUEST.md`（外部レビュー依頼時）
 16. `docs/review/REVIEW_FIX_TRACKER.md`（外部レビュー反映時）
+17. `docs/workflows/claude-review-flow.md`（外部レビュー依頼時）
+18. `docs/workflows/claude-to-codex-review-fix-flow.md`（外部レビュー反映時）
 
 ---
 
