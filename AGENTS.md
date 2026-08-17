@@ -54,6 +54,9 @@
 11. `docs/seo/SEO_SETUP.md`
 12. `docs/seo/SEO_AUDIT_REQUEST_TEMPLATE.md`
 13. `docs/seo/SEO_FIX_TRACKER_TEMPLATE.md`
+14. `docs/rules/lessons.md`
+15. `docs/review/CLAUDE_REVIEW_REQUEST.md`（外部レビュー依頼時）
+16. `docs/review/REVIEW_FIX_TRACKER.md`（外部レビュー反映時）
 
 ---
 
@@ -64,3 +67,4 @@
 - 依頼がない限り、大きな設計変更や全面リファクタはしない
 - 現行サイトから引き継ぐ情報と、今回刷新する情報を切り分けて整理する
 - 旅館の魅力整理と導線設計を先に固めてから実装へ進む
+- Claudeなど外部AIはレビュー用途を基本とし、実装反映はCodex側で判断して行う
